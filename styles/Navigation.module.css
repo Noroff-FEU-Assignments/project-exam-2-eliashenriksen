@@ -1,0 +1,61 @@
+.navbar {
+  background-color: transparent !important;
+  margin: 1rem 2rem 5rem 2rem;
+}
+
+.navContainer {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.navbarRightSide a {
+  color: var(--primarydark);
+  padding-left: 4rem;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.userIcon {
+  font-size: 28px;
+}
+
+.navbarRightSide a:hover {
+  color: var(--primaryfuschia);
+}
+
+.profileDropdown {
+  color: var(--primarydark);
+  background-color: transparent;
+  border: none;
+  margin: 0px;
+  padding: 0rem 0rem 0rem 2rem;
+}
+
+.dropdownMenu {
+  background-color: var(--backgroundtransparentdark);
+  padding: 0px;
+}
+
+.dropdownMenu a {
+  text-align: center;
+  font-size: 16px;
+  padding: 1rem;
+}
+
+.dropdownMenu a:hover {
+  background-color: transparent !important;
+}
+
+.profileDropdown:hover {
+  color: var(--primaryfuschia);
+  background-color: transparent;
+}
+
+.profileDropdown:active {
+  color: var(--primaryfuschia) !important;
+  background-color: transparent !important;
+}
+
+.profileDropdown::after{
+  display: none !important;
+}

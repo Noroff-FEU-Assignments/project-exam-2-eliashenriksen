@@ -1,0 +1,94 @@
+.loginForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginForm input {
+  background-color: var(--backgroundtransparentlight);
+  padding: 1rem;
+  width: 15rem;
+  height: 50px;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  border: none;
+  transition: all 1s;
+  /* box-shadow: -3px 3px 8px 0 rgba(0, 0, 0, 0.2), 8px -8px 12px rgba(255, 253, 253, 0.274); */
+  box-shadow:
+      inset 0 0 15px rgba(55, 84, 170, 0), inset 0 0 20px rgba(255, 255, 255, 0),
+      7px 7px 15px rgba(55, 84, 170, .15),
+      -5px -5px 20px rgba(255, 255, 255, 0.699),
+      inset 0px 0px 4px rgba(255, 255, 255, 0.171);
+}
+
+.loginForm input:focus {
+  transition: all 1s;
+  /* color: var(--primaryfuschia); */
+  border: none;
+  outline: none;
+  width: 20rem;
+}
+
+/* .loginForm input::placeholder {
+  color: var(--primarydark);
+  transition: all 1s;
+} */
+
+/* .loginForm input:focus::placeholder {
+  color: var(--primaryfuschia);
+  transition: all 1s;
+} */
+
+.formInputWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formInputSpanWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.formButtonWrapper1 {
+  display: flex;
+  justify-content: center;
+}
+
+.formButtonWrapper2 {
+  width: 15rem;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loginButton {
+  color: white;
+  background-color: var(--primaryturq);
+  background: linear-gradient(90deg, rgba(10, 164, 151, 1) 0%, rgb(25, 247, 221) 100%);
+  border: solid 2px rgb(0, 226, 200);
+  transition: all 1s;
+}
+
+.loginButton:hover {
+  color: var(--primarydark);
+  background: linear-gradient(180deg, rgba(10, 164, 151, 1) 0%, rgb(25, 247, 221) 100%);
+  transition: all 1s;
+}
+
+.registerButton {
+  color: white;
+  background-color: var(--primarydark);
+  background: linear-gradient(90deg, rgba(35, 37, 50, 1) 0%, rgba(61, 64, 87, 1) 100%);
+  border: solid 2px rgba(61, 64, 87, 1);
+  transition: all 1s;
+}
+
+.registerButton:hover {
+  color: var(--primaryturq);
+  background: linear-gradient(180deg, rgba(35, 37, 50, 1) 0%, rgba(61, 64, 87, 1) 100%);
+  transition: all 1s;
+}
