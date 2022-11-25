@@ -64,31 +64,3 @@
   justify-content: space-between;
   align-items: center;
 }
-
-.loginButton {
-  color: white;
-  background-color: var(--primaryturq);
-  background: linear-gradient(90deg, rgba(10, 164, 151, 1) 0%, rgb(25, 247, 221) 100%);
-  border: solid 2px rgb(0, 226, 200);
-  transition: all 1s;
-}
-
-.loginButton:hover {
-  color: var(--primarydark);
-  background: linear-gradient(180deg, rgba(10, 164, 151, 1) 0%, rgb(25, 247, 221) 100%);
-  transition: all 1s;
-}
-
-.registerButton {
-  color: white;
-  background-color: var(--primarydark);
-  background: linear-gradient(90deg, rgba(35, 37, 50, 1) 0%, rgba(61, 64, 87, 1) 100%);
-  border: solid 2px rgba(61, 64, 87, 1);
-  transition: all 1s;
-}
-
-.registerButton:hover {
-  color: var(--primaryturq);
-  background: linear-gradient(180deg, rgba(35, 37, 50, 1) 0%, rgba(61, 64, 87, 1) 100%);
-  transition: all 1s;
-}

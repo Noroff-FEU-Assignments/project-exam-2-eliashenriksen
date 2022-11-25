@@ -75,8 +75,8 @@ export default function LoginForm() {
 
 					<div className={styles.formButtonWrapper1}>
 						<div className={styles.formButtonWrapper2}>
-							<button className={`globalButtonStyling ${styles.loginButton}`}>Login</button>
-							<button className={`globalButtonStyling ${styles.registerButton}`} onClick={redirectToRegister} type="button">Register</button>
+							<button className="globalButtonStyling buttonPrimary">Login</button>
+							<button className="globalButtonStyling buttonSecondary" onClick={redirectToRegister} type="button">Register</button>
 						</div>
 					</div>
 				</fieldset>

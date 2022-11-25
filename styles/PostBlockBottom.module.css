@@ -1,0 +1,67 @@
+.postBlockBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.postBlockBottomLeftside {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.postBlockBottomLeftside button {
+  color: var(--primarydark);
+  outline: none;
+  border: none;
+  background-color: transparent
+}
+
+.postBlockBottomLeftside button:hover, .postBlockBottomLeftside button:active {
+  background-color: transparent !important;
+  color: var(--primaryfuschia) !important;
+}
+
+
+.postBlockBottomLeftside i {
+  font-size: 24px;
+}
+
+.postBlockBottomLeftside div {
+  display: flex;
+  flex-direction: row;
+}
+
+.postBlockBottomLeftside div p {
+  margin: 0px;
+}
+
+.postBlockBottomRightside {
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.postBlockBottomRightside:hover, .postBlockBottomRightside:hover p {
+  color: var(--primaryfuschia) !important;
+}
+
+.postBlockBottom:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.postBlockBottomRightside i {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.postBlockBottomRightside p {
+  margin: 0px 5px 0px 0px;
+}
+
+.postBlockBottomRightside:last-child {
+  margin: 0px;
+}
