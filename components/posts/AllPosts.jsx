@@ -2,7 +2,7 @@ import useAxios from "../../hooks/useAxios";
 import { Container } from "react-bootstrap";
 import { useEffect, useState, useContext } from "react";
 import AuthContext from "../../context/AuthContext";
-import PostBlock from "./PostBlock/PostBlock";
+import PostBlock from "../posts/postblock/PostBlock";
 
 export default function AllPosts({ postUpdateTracker }) {
 
