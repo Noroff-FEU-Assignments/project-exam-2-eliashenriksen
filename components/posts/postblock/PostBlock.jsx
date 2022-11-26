@@ -10,7 +10,7 @@ import PostBlockCreateComment from "./PostBlockCreateComment";
 import PostBlockComments from "./PostBlockComments";
 
 
-export default function PostBlock({id, title, author, body, created, media, reactions, tags, updated, comments}) {
+export default function PostBlock({ id, title, author, body, created, media, reactions, tags, updated, comments }) {
 
 
   const [avatarImageSrc, setAvatarImageSrc] = useState(author.avatar ? `${cloudinaryImageLoader}${author.avatar}` : "/profileplaceholder.png");

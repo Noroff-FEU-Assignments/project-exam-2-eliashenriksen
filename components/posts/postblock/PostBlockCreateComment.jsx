@@ -4,11 +4,9 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL } from "../../../constants/api";
 import useAxios from "../../../hooks/useAxios";
-
-
 import styles from "../../../styles/PostBlockCreateComment.module.css";
 
-export default function PostBlockCreateComment({postId, updateComments, commentUpdateTracker, toggleComments, commentsToggled}) {
+export default function PostBlockCreateComment({ postId, updateComments, commentUpdateTracker, toggleComments, commentsToggled }) {
 
   const schema = yup.object().shape({
     body: yup.string().required("Please enter a message"),
@@ -30,7 +28,7 @@ export default function PostBlockCreateComment({postId, updateComments, commentU
 		console.log(data);
 
 		try {
-			const response = await api.post(BASE_URL + `/api/v1/social/posts/${postId}/comment`, data);
+			const response = await api.post(`/api/v1/social/posts/${postId}/comment`, data);
 			console.log("AXIOS CREATE COMMENT RESPONSE:", response); //Delete console log later
 
       if (response.data.id) {

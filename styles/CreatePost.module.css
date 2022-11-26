@@ -1,0 +1,66 @@
+/* .createPostForm span {
+  margin-bottom: 2rem !important;
+  padding-bottom: 2rem !important;
+} */
+
+.createPostForm {
+  margin-top: 3rem;
+}
+
+.createPostForm, .createPostForm div {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.createPostForm input {
+  background-color: var(--backgroundtransparentlight);
+  padding: 1rem;
+  width: 15rem;
+  height: 50px;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  border-radius: 20px;
+  border: none;
+  transition: all 1s;
+  box-shadow:
+    inset 0 0 15px rgba(55, 84, 170, 0), inset 0 0 20px rgba(255, 255, 255, 0),
+    7px 7px 15px rgba(55, 84, 170, .15),
+    -5px -5px 20px rgba(255, 255, 255, 0.699),
+    inset 0px 0px 4px rgba(255, 255, 255, 0.171);
+}
+
+.createPostForm input:focus {
+  transition: all 1s;
+  /* color: var(--primaryfuschia); */
+  border: none;
+  outline: none;
+  width: 35rem;
+}
+
+.createPostForm textarea {
+  resize: none;
+  background-color: var(--backgroundtransparentlight);
+  padding: 1rem;
+  width: 15rem;
+  height: 5rem !important;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  border: none;
+  transition: all 1s;
+  box-shadow:
+    inset 0 0 15px rgba(55, 84, 170, 0), inset 0 0 20px rgba(255, 255, 255, 0),
+    7px 7px 15px rgba(55, 84, 170, .15),
+    -5px -5px 20px rgba(255, 255, 255, 0.699),
+    inset 0px 0px 4px rgba(255, 255, 255, 0.171);
+}
+
+.createPostForm textarea:focus {
+  transition: all 1s;
+  /* color: var(--primaryfuschia); */
+  border: none;
+  outline: none;
+  width: 35rem;
+  height: 15rem !important;
+}

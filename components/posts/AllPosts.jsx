@@ -4,7 +4,7 @@ import { useEffect, useState, useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import PostBlock from "./PostBlock/PostBlock";
 
-export default function AllPosts() {
+export default function AllPosts({ postUpdateTracker }) {
 
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -33,7 +33,7 @@ export default function AllPosts() {
       getAllPosts();
     }
 
-  }, []);
+  }, [postUpdateTracker]);
 
   if (loading) {
     return(

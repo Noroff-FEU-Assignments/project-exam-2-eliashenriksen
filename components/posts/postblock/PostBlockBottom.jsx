@@ -2,7 +2,7 @@ import styles from "../../../styles/PostBlockBottom.module.css";
 import PostBlockReactWithEmoji from "./PostBlockReactWithEmoji";
 import { useRouter } from "next/router";
 
-export default function PostBlockBottom({reactions, comments, toggleComments, postId}) {
+export default function PostBlockBottom({ reactions, comments, toggleComments, postId }) {
 
   const router = useRouter();
 
