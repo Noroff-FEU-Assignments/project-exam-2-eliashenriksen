@@ -1,3 +1,14 @@
-export default function Heading(props) {
-  return <h1>{props.title}</h1>;
+export default function Heading({ title }) {
+
+
+  if (title) {
+    return(
+      <h1>{title}</h1>
+    )
+  } else {
+    return(
+      ""
+    )
+  }
+
 }

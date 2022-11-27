@@ -1,0 +1,6 @@
+.commentsReplyBlock {
+  padding: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  background-color: var(--backgroundtransparentdark);
+}

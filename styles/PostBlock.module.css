@@ -41,6 +41,26 @@
   margin-left: 2rem;
 }
 
+.postBlockTopInfoTitleWrapper {
+  display: flex;
+}
+
+.postBlockTopInfoTitleWrapper a {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.postBlockTopInfoTitleWrapper a:hover p {
+  color: var(--primaryfuschia);
+}
+
+.postBlockTopInfoTitleWrapper p {
+  margin: 0rem 0.4rem 0rem 0rem;
+  /* text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--primaryfuschia); */
+}
+
 .postBlockTop hr {
   width: 100%;
   align-self: flex-end;

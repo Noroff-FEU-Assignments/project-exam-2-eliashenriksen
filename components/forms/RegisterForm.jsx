@@ -43,8 +43,8 @@ export default function RegisterForm() {
         function redirectToLogin() {
           router.push("/");
         }
-        setRegisterSuccess(`User created succesfully! Redirecting back to login page in 10 seconds`);
-        setTimeout(redirectToLogin, 10000);
+        setRegisterSuccess(`User created succesfully! Redirecting back to login page in 3 seconds`);
+        setTimeout(redirectToLogin, 3000);
       }
 		} catch (error) {
 			console.log("AXIOS REGISTER ERROR:", error);

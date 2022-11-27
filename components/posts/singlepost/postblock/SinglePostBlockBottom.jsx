@@ -1,8 +1,8 @@
-import styles from "../../../styles/PostBlockBottom.module.css";
-import PostBlockReactWithEmoji from "./PostBlockReactWithEmoji";
+import styles from "../../../../styles/PostBlockBottom.module.css";
+// import PostBlockReactWithEmoji from "./PostBlockReactWithEmoji";
 import { useRouter } from "next/router";
 
-export default function PostBlockBottom({ reactions, comments, toggleComments, postId }) {
+export default function SinglePostBlockBottom({ reactions, comments, toggleComments, postId }) {
 
   const router = useRouter();
 
@@ -17,7 +17,7 @@ export default function PostBlockBottom({ reactions, comments, toggleComments, p
     <div className={styles.postBlockBottom}>
       <div className={styles.postBlockBottomLeftside}>
         {/* <i className="far fa-smile"></i> */}
-        <PostBlockReactWithEmoji></PostBlockReactWithEmoji>
+        {/* <PostBlockReactWithEmoji></PostBlockReactWithEmoji> */}
         {reactions ? reactions.map((reaction) => {
           return(
             <div key={reaction.symbol}>

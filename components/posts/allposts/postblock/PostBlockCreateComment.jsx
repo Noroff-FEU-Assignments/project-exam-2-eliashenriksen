@@ -2,14 +2,15 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { BASE_URL } from "../../../constants/api";
-import useAxios from "../../../hooks/useAxios";
-import styles from "../../../styles/PostBlockCreateComment.module.css";
+import { BASE_URL } from "../../../../constants/api";
+import useAxios from "../../../../hooks/useAxios";
+import styles from "../../../../styles/PostBlockCreateComment.module.css";
 
 export default function PostBlockCreateComment({ postId, updateComments, commentUpdateTracker, toggleComments, commentsToggled }) {
 
   const schema = yup.object().shape({
     body: yup.string().required("Please enter a message"),
+		replyToId: yup.number(),
   });
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm({
@@ -54,6 +55,14 @@ export default function PostBlockCreateComment({ postId, updateComments, comment
         {commentSuccess && <span>{commentSuccess}</span>}
 				{commentError && <span>{commentError}</span>}
 				<fieldset disabled={submitting}>
+
+					{/* <div className={styles.formInputWrapper}>
+						<div className={styles.formInputSpanWrapper}>
+							{errors.replyToId && <span>{errors.replyToId.message}</span>}
+						</div>
+            <input name="replyToId" placeholder="Replying to" {...register("replyToId")} />
+					</div> */}
+
 					<div className={styles.formInputWrapper}>
 						<div className={styles.formInputSpanWrapper}>
 							{errors.body && <span>{errors.body.message}</span>}

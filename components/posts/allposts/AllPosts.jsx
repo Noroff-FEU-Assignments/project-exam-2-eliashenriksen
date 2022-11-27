@@ -1,8 +1,8 @@
-import useAxios from "../../hooks/useAxios";
+import useAxios from "../../../hooks/useAxios";
 import { Container } from "react-bootstrap";
 import { useEffect, useState, useContext } from "react";
-import AuthContext from "../../context/AuthContext";
-import PostBlock from "../posts/postblock/PostBlock";
+import AuthContext from "../../../context/AuthContext";
+import PostBlock from "./postblock/PostBlock";
 
 export default function AllPosts({ postUpdateTracker }) {
 
@@ -56,7 +56,17 @@ export default function AllPosts({ postUpdateTracker }) {
     <Container>
       {posts.map((post) => {
         return(
-          <PostBlock key={post.id} title={post.title} author={post.author} id={post.id} created={post.created} body={post.body} media={post.media} reactions={post.reactions} tags={post.tags} updated={post.updated} comments={post.comments}></PostBlock>
+          <PostBlock 
+          key={post.id} 
+          title={post.title} 
+          author={post.author} 
+          id={post.id} created={post.created} 
+          body={post.body} media={post.media} 
+          reactions={post.reactions} 
+          tags={post.tags} 
+          updated={post.updated} 
+          comments={post.comments}>
+          </PostBlock>
         )
       })}
     </Container>

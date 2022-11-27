@@ -2,8 +2,8 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
-import useAxios from "../../hooks/useAxios";
-import styles from "../../styles/CreatePost.module.css";
+import useAxios from "../../../hooks/useAxios";
+import styles from "../../../styles/CreatePost.module.css";
 
 export default function CreatePost({ postUpdateTracker, updatePosts}) {
 
