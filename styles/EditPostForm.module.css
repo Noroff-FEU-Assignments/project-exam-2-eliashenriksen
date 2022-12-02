@@ -1,0 +1,112 @@
+/* .createPostForm span {
+  margin-bottom: 2rem !important;
+  padding-bottom: 2rem !important;
+} */
+
+.editPostForm {
+  margin-top: 3rem;
+}
+
+.editPostForm,
+.editPostForm div:not(.formButtonWrapper1) {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editPostForm input {
+  background-color: var(--backgroundtransparentlight);
+  padding: 1rem;
+  width: 15rem;
+  height: 50px;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  border-radius: 20px;
+  border: none;
+  transition: all 1s;
+  box-shadow:
+    inset 0 0 15px rgba(55, 84, 170, 0), inset 0 0 20px rgba(255, 255, 255, 0),
+    7px 7px 15px rgba(55, 84, 170, .15),
+    -5px -5px 20px rgba(255, 255, 255, 0.699),
+    inset 0px 0px 4px rgba(255, 255, 255, 0.171);
+}
+
+.editPostForm input:focus {
+  transition: all 1s;
+  /* color: var(--primaryfuschia); */
+  border: none;
+  outline: none;
+  width: 35rem;
+}
+
+
+.editPostForm textarea {
+  resize: none;
+  background-color: var(--backgroundtransparentlight);
+  padding: 1rem;
+  width: 15rem;
+  height: 5rem !important;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  border: none;
+  transition: all 1s;
+  box-shadow:
+    inset 0 0 15px rgba(55, 84, 170, 0), inset 0 0 20px rgba(255, 255, 255, 0),
+    7px 7px 15px rgba(55, 84, 170, .15),
+    -5px -5px 20px rgba(255, 255, 255, 0.699),
+    inset 0px 0px 4px rgba(255, 255, 255, 0.171);
+}
+
+.editPostForm textarea:focus {
+  transition: all 1s;
+  /* color: var(--primaryfuschia); */
+  border: none;
+  outline: none;
+  width: 35rem;
+  height: 15rem !important;
+}
+
+.formButtonWrapper1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.formButtonWrapper1 button {
+  margin: 1rem;
+}
+
+.modalWhole {
+  background-color: rgba(255, 253, 253, 0.466);
+  backdrop-filter: blur(10px);
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-bottom: 10rem !important;
+}
+
+.modalTitle {
+  font-size: 22px;
+}
+
+.modalContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.096);
+  border-radius: 20px;
+  border: none;
+  background-color: white;
+  padding: 0px;
+}
+
+.modalBody {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center !important;
+  max-width: 25rem;
+}

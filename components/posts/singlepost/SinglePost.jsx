@@ -19,7 +19,7 @@ export default function SinglePost({ postId }) {
     async function getPost() {
       try {
         const firstCall = await api.get(`/api/v1/social/posts/${postId}?_author=true&_comments=true&_reactions=true`);
-        console.log("api data for single post >", firstCall.data, firstCall);
+        console.log("api data for single post >", firstCall.data, firstCall); // delete console log
         setPost(firstCall.data);
 
       } catch (error) {

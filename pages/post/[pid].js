@@ -1,8 +1,10 @@
 import Layout from "../../components/layout/Layout"
 import { useRouter } from "next/router"
 import SinglePost from "../../components/posts/singlepost/SinglePost";
+import useAuthSecurity from "../../hooks/useAuthSecurity";
 
 export default function Post() {
+  useAuthSecurity();
 
   const router = useRouter()
   const { pid } = router.query

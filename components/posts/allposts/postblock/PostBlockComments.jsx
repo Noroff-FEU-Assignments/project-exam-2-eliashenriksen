@@ -3,6 +3,7 @@ import moment from "moment/moment";
 import React, { useEffect, useState} from "react";
 import useAxios from "../../../../hooks/useAxios";
 import styles from "../../../../styles/PostBlockComments.module.css";
+import Link from "next/link";
 
 export default function PostBlockComments({ postId, commentsToggled, commentUpdateTracker }) {
 
@@ -62,38 +63,46 @@ export default function PostBlockComments({ postId, commentsToggled, commentUpda
   return(
     <Container id="postblockCommentsContainer">
       {comments.map((comment) => {
-        const mainCommentId = comment.id;
-        if (!comment.replyToId) {
-          return(
+        const mainCommentReplyToId = comment.replyToId;
+        const replyingTo = comments.filter(comment => comment.id === mainCommentReplyToId);
+        console.log("replyingto data>", replyingTo);
+        return(
             <React.Fragment key={comment.id}>
               <div key={comment.id}>
+                {comment.replyToId ?                 
+                  <div>
+                    <h4>Replying to:</h4>
+                    <div className={styles.commentsReplyBlock}>
+                      {replyingTo.map((mainComment) => {
+                        return(
+                            <div key={mainComment.id}>
+                              <div>
+                                <Link href={`/profile/${mainComment.owner}`}>
+                                  <h3>{mainComment.owner}</h3>
+                                </Link>
+                                <p>{moment(mainComment.created).format("DD. MMMM YYYY, h:mm")}</p>
+                              </div>
+                              <div>
+                                <p>{mainComment.body}</p>
+                              </div>
+                            </div>
+                        )
+                      })}
+                    </div>
+                </div> : ""}
                 <div>
-                  <h3>{comment.owner}</h3>
+                  <Link href={`/profile/${comment.owner}`}>
+                    <h3>{comment.owner}</h3>
+                  </Link>
                   <p>{moment(comment.created).format("DD. MMMM YYYY, h:mm")}</p>
                 </div>
                 <div>
                   <p>{comment.body}</p>
                 </div>
-                <div className={styles.commentsReplyHolder}>
-                  {comments.map((comment) => {
-                    if (comment.replyToId && mainCommentId === comment.replyToId) {
-                      return(
-                        <div key={comment.id} className={styles.commentsReplyBlock}>
-                          <div>
-                            <h4>{comment.owner}</h4>
-                            <p>{moment(comment.created).format("DD. MMMM YYYY, h:mm")}</p>
-                          </div>
-                          <p>{comment.body}</p>
-                        </div>
-                      )
-                    }
-                  })}
-                </div>
                 <hr></hr>
               </div>
             </React.Fragment>
           )
-        }
       })}
     </Container>
   )

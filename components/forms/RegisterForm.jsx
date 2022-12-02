@@ -33,7 +33,7 @@ export default function RegisterForm() {
 	async function onSubmit(data) {
 		setSubmitting(true);
 		setRegisterError(null);
-		console.log(data);
+		console.log(data); // delete
 
 		try {
 			const response = await axios.post(BASE_URL + "/api/v1/social/auth/register", data);

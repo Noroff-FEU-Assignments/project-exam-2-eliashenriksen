@@ -1,0 +1,16 @@
+.scrollToTopButtonWrapper {
+  color: var(--primarydark);
+  z-index: 9999;
+  position: sticky;
+  bottom: 100px !important;
+  float: right;
+  font-size: 55px;
+  background: transparent;
+  outline: none;
+  border: none;
+  margin-right: 1rem;
+}
+
+.scrollToTopButtonWrapper:hover {
+  color: var(--primaryfuschia);
+}

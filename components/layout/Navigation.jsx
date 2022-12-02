@@ -12,7 +12,7 @@ import { useRouter } from 'next/router';
 
 export default function Navigation() {
 
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth, setAuth, user, setUser] = useContext(AuthContext);
   const router = useRouter();
   const [hasMounted, setHasMounted] = useState(false);
   
@@ -25,11 +25,12 @@ export default function Navigation() {
   }
 
   function handleMyProfile() {
-    router.push("/home");
+    router.push(`/profile/${user}`);
   }
 
   function handleLogout() {
     setAuth(null);
+    setUser(null);
     router.push("/");
   }
 
@@ -68,11 +69,8 @@ export default function Navigation() {
             <Link href="/home">
               Feed
             </Link>
-            <Link href="/">
+            <Link href="/people">
               People
-            </Link>
-            <Link href="/">
-              My Posts
             </Link>
             <Dropdown className={styles.profileDropdown}>
               <Dropdown.Toggle id="dropdown-basic" className={styles.profileDropdown}>

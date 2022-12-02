@@ -1,0 +1,66 @@
+.profileBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileBlockInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileBlockInfoWrapper p {
+  margin: 0px;
+}
+
+.bannerImageHolder {
+  display: flex;
+  width: 100%;
+  margin: 0px 0px -75px 0px;
+}
+
+.bannerImageWrapper {
+  margin: 0px;
+  display: flex;
+  position: relative !important;
+  width: 100% !important;
+  height: 200px !important;
+  overflow: hidden !important;
+  border-radius: 20px;
+  background: #ffffff10;
+  backdrop-filter: blur(10px);
+  /* border: 5px solid white; */
+  box-shadow: 0px 3px 6px #0000002a;
+}
+
+.bannerImageWrapper img {
+  object-fit: cover;
+  width: auto;
+  height: 100%;
+  position: relative;
+  vertical-align: middle;
+}
+
+.avatarImageWrapper {
+  position: relative !important;
+  width: 150px !important;
+  height: 150px !important;
+  overflow: hidden !important;
+  border-radius: 50%;
+  background: #ffffff10;
+  backdrop-filter: blur(10px);
+  border: 5px solid white;
+  box-shadow: 0px 3px 6px #0000002a;
+  margin-bottom: 1rem;
+}
+
+.avatarImageWrapper img {
+  object-fit: cover;
+  width: auto;
+  height: 100%;
+  position: relative;
+  vertical-align: middle;
+}

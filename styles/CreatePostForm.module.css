@@ -39,12 +39,14 @@
   width: 35rem;
 }
 
+
 .createPostForm textarea {
   resize: none;
   background-color: var(--backgroundtransparentlight);
   padding: 1rem;
   width: 15rem;
   height: 5rem !important;
+  margin-top: 1rem;
   margin-bottom: 2rem;
   border-radius: 20px;
   border: none;

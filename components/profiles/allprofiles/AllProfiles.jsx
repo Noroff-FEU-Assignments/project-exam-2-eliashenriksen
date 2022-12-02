@@ -2,23 +2,27 @@ import useAxios from "../../../hooks/useAxios";
 import { Container } from "react-bootstrap";
 import { useEffect, useState, useContext } from "react";
 import AuthContext from "../../../context/AuthContext";
-import PostBlock from "./postblock/PostBlock";
+import ProfileBlock from "./profileblock/ProfileBlock";
+import { useRouter } from "next/router";
+import FindSpecificProfile from "./FindSpecificProfile";
 
-export default function AllPosts({ postUpdateTracker }) {
 
-  const [posts, setPosts] = useState([]);
+export default function AllProfiles() {
+
+  const [profiles, setProfiles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [auth, setAuth] = useContext(AuthContext);
   const api = useAxios();
+  const router = useRouter();
 
 
   useEffect(() => {
-    async function getAllPosts() {
+    async function getAllProfiles() {
       try {
-        const firstCall = await api.get("/api/v1/social/posts/?_author=true&_comments=true&_reactions=true&sort=id&sortOrder=desc");
+        const firstCall = await api.get("/api/v1/social/profiles?_following=true&_followers=true");
         console.log("api data >", firstCall.data, firstCall); // delete console log
-        setPosts(firstCall.data);
+        setProfiles(firstCall.data);
 
       } catch (error) {
         console.log(error);
@@ -30,10 +34,10 @@ export default function AllPosts({ postUpdateTracker }) {
     }
 
     if (auth) {
-      getAllPosts();
+      getAllProfiles();
     }
 
-  }, [postUpdateTracker]);
+  }, []);
 
   if (loading) {
     return(
@@ -54,19 +58,19 @@ export default function AllPosts({ postUpdateTracker }) {
 
   return (
     <Container>
-      {posts.map((post) => {
+      <FindSpecificProfile></FindSpecificProfile>
+      {profiles.map((profile) => {
         return(
-          <PostBlock 
-          key={post.id} 
-          title={post.title} 
-          author={post.author} 
-          id={post.id} created={post.created} 
-          body={post.body} media={post.media} 
-          reactions={post.reactions} 
-          tags={post.tags} 
-          updated={post.updated} 
-          comments={post.comments}>
-          </PostBlock>
+          <ProfileBlock 
+          key={profile.name}
+          name={profile.name}
+          email={profile.email}
+          postcount={profile._count.posts}
+          followercount={profile._count.followers}
+          followingcount={profile._count.following}
+          avatar={profile.avatar}
+          banner={profile.banner}>
+          </ProfileBlock>
         )
       })}
     </Container>

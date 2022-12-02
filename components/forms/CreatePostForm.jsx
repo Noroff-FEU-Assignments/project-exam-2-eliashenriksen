@@ -2,10 +2,10 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
-import useAxios from "../../../hooks/useAxios";
-import styles from "../../../styles/CreatePost.module.css";
+import useAxios from "../../hooks/useAxios";
+import styles from "../../styles/CreatePostForm.module.css";
 
-export default function CreatePost({ postUpdateTracker, updatePosts}) {
+export default function CreatePostForm({ postUpdateTracker, updatePosts}) {
 
 
   const urlExpression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
@@ -33,7 +33,7 @@ export default function CreatePost({ postUpdateTracker, updatePosts}) {
   async function onSubmit(data) {
 		setSubmitting(true);
 		setPostError(null);
-		console.log(data);
+		console.log(data); // delete
 
 		try {
 			const response = await api.post(`/api/v1/social/posts`, data);

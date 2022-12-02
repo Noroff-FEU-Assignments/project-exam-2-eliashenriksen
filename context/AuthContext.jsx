@@ -5,7 +5,8 @@ const AuthContext = React.createContext([null, () => {}]);
 
 export const AuthProvider = (props) => {
   const [auth, setAuth] = useLocalStorage("authentication", null);
-  return <AuthContext.Provider value={[auth, setAuth]}>{props.children}</AuthContext.Provider>
+  const [user, setUser] = useLocalStorage("user", null);
+  return <AuthContext.Provider value={[auth, setAuth, user, setUser]}>{props.children}</AuthContext.Provider>
 };
 
 export default AuthContext;

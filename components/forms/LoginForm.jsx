@@ -25,7 +25,7 @@ export default function LoginForm() {
 
 	const [submitting, setSubmitting] = useState(false);
 	const [loginError, setLoginError] = useState(null);
-	const [auth, setAuth] = useContext(AuthContext);
+	const [auth, setAuth, user, setUser] = useContext(AuthContext);
 
 
   const router = useRouter();
@@ -33,13 +33,14 @@ export default function LoginForm() {
 	async function onSubmit(data) {
 		setSubmitting(true);
 		setLoginError(null);
-		console.log(data);
+		console.log("login submit data", data); // delete console log
 
 		try {
 			const response = await axios.post(BASE_URL + "/api/v1/social/auth/login", data);
 			console.log("AXIOS LOGIN RESPONSE:", response); //Delete console log later
       if (response.data.accessToken) {
 				setAuth(response.data.accessToken);
+				setUser(response.data.name);
         router.push("/home");
       }
 		} catch (error) {

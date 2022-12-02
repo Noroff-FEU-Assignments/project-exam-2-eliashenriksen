@@ -1,7 +1,7 @@
 .postBlock {
   background-color: var(--backgroundtransparentdark);
   padding: 1rem 3rem 1rem 3rem;
-  margin: 1rem 1rem 3rem 1rem;
+  margin: 1rem 0rem 3rem 0rem;
   border-radius: 10px;
 }
 
@@ -23,8 +23,15 @@
 }
 
 .avatarImageWrapper img {
+  object-fit: cover;
+  width: auto;
+  height: 100%;
   position: relative;
   vertical-align: middle;
+}
+
+.postBlockTopAvatarImageLink:hover .avatarImageWrapper {
+  border: 5px solid var(--primaryfuschia);
 }
 
 .postBlockTop {
@@ -39,6 +46,32 @@
 
 .postBlockTopInfo {
   margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.postBlockTopInfoAuthorLinkWrapper {
+  display: flex;
+}
+
+.postBlockTopInfoH2Link:hover h2 {
+  color: var(--primaryfuschia);
+}
+
+.postBlockTimeWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postBlockTimeWrapper2 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.postBlockTimeWrapper2 p {
+  margin: 0px;
 }
 
 .postBlockTopInfoTitleWrapper {
@@ -84,6 +117,10 @@
 
 .postBlockMiddleImageWrapper img {
   position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .postBlockCommentSection {
@@ -91,4 +128,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 3rem;
+}
+
+.postBlockCommentSection h3 {
+  margin-top: 3rem;
 }

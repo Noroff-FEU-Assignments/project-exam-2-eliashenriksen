@@ -2,9 +2,9 @@ import useAxios from "../../../hooks/useAxios";
 import { Container } from "react-bootstrap";
 import { useEffect, useState, useContext } from "react";
 import AuthContext from "../../../context/AuthContext";
-import PostBlock from "./postblock/PostBlock";
+import PostBlock from "../../posts/allposts/postblock/PostBlock";
 
-export default function AllPosts({ postUpdateTracker }) {
+export default function SingleProfilePosts({ profileId }) {
 
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,7 +16,7 @@ export default function AllPosts({ postUpdateTracker }) {
   useEffect(() => {
     async function getAllPosts() {
       try {
-        const firstCall = await api.get("/api/v1/social/posts/?_author=true&_comments=true&_reactions=true&sort=id&sortOrder=desc");
+        const firstCall = await api.get(`/api/v1/social/profiles/${profileId}/posts?_author=true&_comments=true&_reactions=true&sort=id&sortOrder=desc`);
         console.log("api data >", firstCall.data, firstCall); // delete console log
         setPosts(firstCall.data);
 
@@ -33,7 +33,7 @@ export default function AllPosts({ postUpdateTracker }) {
       getAllPosts();
     }
 
-  }, [postUpdateTracker]);
+  }, []);
 
   if (loading) {
     return(
@@ -60,12 +60,15 @@ export default function AllPosts({ postUpdateTracker }) {
           key={post.id} 
           title={post.title} 
           author={post.author} 
-          id={post.id} created={post.created} 
-          body={post.body} media={post.media} 
+          id={post.id}
+          created={post.created} 
+          body={post.body}
+          media={post.media} 
           reactions={post.reactions} 
           tags={post.tags} 
           updated={post.updated} 
-          comments={post.comments}>
+          comments={post.comments}
+          profileId={profileId}>
           </PostBlock>
         )
       })}

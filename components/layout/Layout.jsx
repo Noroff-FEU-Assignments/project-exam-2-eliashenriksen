@@ -6,6 +6,7 @@ import particleOptions from "../../public/particleOptions.json";
 import Navigation from "./Navigation";
 import Heading from "./Heading";
 import styles from "../../styles/Layout.module.css";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 
 export default function Layout(props) {
@@ -30,6 +31,7 @@ export default function Layout(props) {
             <Heading title={props.title}></Heading>
             {props.children}
           </Container>
+          <ScrollToTopButton></ScrollToTopButton>
         </main>
         <footer>
           <p>Footer stuff goes here</p>

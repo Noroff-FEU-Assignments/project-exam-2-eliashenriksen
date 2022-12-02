@@ -1,8 +1,8 @@
 import Layout from '../components/layout/Layout';
 import AllPosts from "../components/posts/allposts/AllPosts";
 import useAuthSecurity from "../hooks/useAuthSecurity";
-import CreatePost from "../components/posts/allposts/CreatePost";
 import { useState } from "react";
+import CreatePostForm from "../components/forms/CreatePostForm";
 
 export default function Home() {
   useAuthSecurity();
@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <Layout title="All Posts">
-      <CreatePost updatePosts={setPostsUpdated} postUpdateTracker={postsUpdated}></CreatePost>
+      <CreatePostForm updatePosts={setPostsUpdated} postUpdateTracker={postsUpdated}></CreatePostForm>
       <AllPosts postUpdateTracker={postsUpdated}></AllPosts>
     </Layout>
   )

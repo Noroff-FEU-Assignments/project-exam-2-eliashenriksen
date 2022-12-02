@@ -1,0 +1,55 @@
+
+.profileBlock {
+  background-color: var(--backgroundtransparentdark);
+  display: flex;
+  padding: 1rem 3rem 1rem 3rem;
+  margin: 1rem 1rem 3rem 1rem;
+  border-radius: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 15rem;
+}
+
+.profileBlockLeft {
+  display: flex;
+  flex-direction: row;
+}
+
+.profileBlockImageHolder {
+  margin-right: 2rem;
+}
+
+.avatarImageWrapper {
+  position: relative !important;
+  width: 150px !important;
+  height: 150px !important;
+  overflow: hidden !important;
+  border-radius: 50%;
+  background: #ffffff10;
+  backdrop-filter: blur(10px);
+  border: 5px solid white;
+  box-shadow: 0px 3px 6px #0000002a;
+  margin-bottom: 1rem;
+}
+
+.avatarImageWrapper:hover {
+  border: 5px solid var(--primaryfuschia);
+}
+
+.avatarImageWrapper img {
+  object-fit: cover;
+  width: auto;
+  height: 100%;
+  position: relative;
+  vertical-align: middle;
+}
+
+
+.profileBlockInfo a:hover h2 {
+  color: var(--primaryfuschia);
+}
+
+.profileBlockInfo p {
+  margin: 0px;
+}
