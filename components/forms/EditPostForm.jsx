@@ -48,10 +48,11 @@ export default function EditPostForm({ postId, prefillTitle, prefillBody, prefil
 			console.log("AXIOS UPDATE POST RESPONSE:", response); //Delete console log later
 
       if (response.data.id) {
-        setPostSuccess("Post updated succesfully! Redirecting to post in 3 seconds.");
-				setTimeout(() => {
-					router.push(`/post/${postId}`);
-				}, 3000);
+        setPostSuccess("Post updated succesfully!");
+				router.push(`/post/${postId}`);
+				// setTimeout(() => {
+				// 	router.push(`/post/${postId}`);
+				// }, 3000);
       }
 			
 		} catch (error) {

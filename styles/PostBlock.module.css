@@ -162,7 +162,7 @@
 
 .postBlockMiddleImageWrapper img {
   position: relative;
-  object-fit: cover;
+  object-fit: contain;
   width: auto;
   height: 100%;
   vertical-align: middle;

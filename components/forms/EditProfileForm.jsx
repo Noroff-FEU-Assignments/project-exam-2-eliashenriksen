@@ -42,10 +42,11 @@ export default function EditProfileForm({ name, email, avatar, banner }) {
 			console.log("AXIOS UPDATE PROFILE RESPONSE:", response); //Delete console log later
 
       if (response.data.name) {
-        setPostSuccess("Profile updated succesfully! Redirecting to profile in 3 seconds.");
-				setTimeout(() => {
-					router.push(`/profile/${name}`);
-				}, 3000);
+        setPostSuccess("Profile updated succesfully!");
+        router.push(`/profile/${name}`);
+				// setTimeout(() => {
+				// 	router.push(`/profile/${name}`);
+				// }, 3000);
       }
 			
 		} catch (error) {
