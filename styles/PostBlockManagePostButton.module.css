@@ -6,6 +6,13 @@
       inset 0px 0px 4px rgba(255, 255, 255, .2);
 }
 
+@media only screen and (max-width: 766px) {
+  .managePostButton {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+}
+
 .managePostButton i {
   margin-right: 4px;
 }

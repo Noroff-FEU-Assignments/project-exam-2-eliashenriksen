@@ -33,8 +33,8 @@ export default function Layout(props) {
           </Container>
           <ScrollToTopButton></ScrollToTopButton>
         </main>
-        <footer>
-          <p>Footer stuff goes here</p>
+        <footer className={styles.footer}>
+          <p>@ Intouch 2022</p>
         </footer>
       </div>
       <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={particleOptions}></Particles>

@@ -1,11 +1,11 @@
-.loginForm {
+.registerForm {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.loginForm input {
+.registerForm input {
   background-color: var(--backgroundtransparentlight);
   padding: 1rem;
   width: 15rem;
@@ -15,13 +15,13 @@
   border: none;
   transition: all 1s;
   box-shadow:
-      inset 0 0 15px rgba(55, 84, 170, 0), inset 0 0 20px rgba(255, 255, 255, 0),
-      7px 7px 15px rgba(55, 84, 170, .15),
-      -5px -5px 20px rgba(255, 255, 255, 0.699),
-      inset 0px 0px 4px rgba(255, 255, 255, 0.171);
+    inset 0 0 15px rgba(55, 84, 170, 0), inset 0 0 20px rgba(255, 255, 255, 0),
+    7px 7px 15px rgba(55, 84, 170, .15),
+    -5px -5px 20px rgba(255, 255, 255, 0.699),
+    inset 0px 0px 4px rgba(255, 255, 255, 0.171);
 }
 
-.loginForm input:focus {
+.registerForm input:focus {
   transition: all 1s;
   border: none;
   outline: none;
@@ -50,6 +50,6 @@
   width: 15rem;
   margin-top: 0.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }

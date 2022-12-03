@@ -67,7 +67,7 @@ export default function PostBlockCreateComment({ postId, updateComments, comment
 						<div className={styles.formInputSpanWrapper}>
 							{errors.body && <span>{errors.body.message}</span>}
 						</div>
-            <textarea name="body" placeholder="Your message" {...register("body")} />
+            <textarea id="postBlockCreateCommentTextarea" name="body" placeholder="Your message" {...register("body")} />
 					</div>
 
 					<div className={styles.formButtonWrapper1}>

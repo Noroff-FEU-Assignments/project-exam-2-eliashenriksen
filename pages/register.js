@@ -5,7 +5,7 @@ export default function Register() {
 
   return (
     <Layout>
-      <p>Please register below.</p>
+      <p>Please fill in the information below.</p>
       <RegisterForm></RegisterForm>
     </Layout>
   )

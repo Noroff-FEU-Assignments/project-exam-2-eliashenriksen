@@ -1,0 +1,29 @@
+.reactionHolder {
+  overflow-y: auto;
+  scrollbar-color: rgb(255, 0, 0) #333;
+}
+
+@media only screen and (max-width: 766px) {
+  .reactionHolder {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.reactionHolder::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.reactionHolder::-webkit-scrollbar-thumb {
+  background: var(--backgroundtransparentdark);
+}
+
+.reactionHolder::-webkit-scrollbar-thumb:hover {
+  background: var(--primaryfuschia);
+}
+
+.reactionHolder::-webkit-scrollbar-track {
+  background: var(--backgroundtransparentlight);
+}

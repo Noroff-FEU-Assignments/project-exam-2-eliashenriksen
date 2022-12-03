@@ -1,6 +1,7 @@
 import { Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import useAxios from "../../../../hooks/useAxios";
+import styles from "../../../../styles/PostBlockBottomReactions.module.css";
 
 export default function PostBlockBottomReactions({ postId, reactionUpdateTracker, reactionsOnLoad }) {
 
@@ -39,7 +40,7 @@ export default function PostBlockBottomReactions({ postId, reactionUpdateTracker
   }
 
   return(
-    <Container>
+    <Container className={styles.reactionHolder}>
       {/* {reactionsOnLoad.map((reaction) => {
         return(
           <div key={reaction.symbol}>

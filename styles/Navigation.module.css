@@ -1,18 +1,58 @@
-.navbar {
-  background-color: transparent !important;
+.navWholeWrapper {
   margin: 1rem 2rem 5rem 2rem;
+  padding: 0px;
 }
 
-.navContainer {
-  margin: 0px !important;
-  padding: 0px !important;
+.navbar {
+  background-color: transparent !important;
+  padding: 0px;
+  margin-top: -41px;
 }
+
+
+
+.navbarToggler {
+  margin-left: auto;
+  border: none !important;
+  outline: none !important;
+}
+
+.navbarToggler:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.navbarToggler span {
+  color: var(--primarydark) !important;
+}
+
+.navbarRightSide {
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 990px) {
+  .navbarRightSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+  }
+}
+
 
 .navbarRightSide a {
   color: var(--primarydark);
   padding-left: 4rem;
   font-size: 20px;
   font-weight: 300;
+}
+
+@media only screen and (max-width: 990px) {
+  .navbarRightSide a {
+    padding: 1rem !important;
+    margin: 0px !important;
+  }
 }
 
 .userIcon {
@@ -31,6 +71,15 @@
   padding: 0rem 0rem 0rem 2rem;
 }
 
+@media only screen and (max-width: 990px) {
+  .profileDropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem !important;
+  }
+}
+
 .dropdownMenu {
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.096);
   border-radius: 20px;
@@ -38,6 +87,7 @@
   background-color: white;
   padding: 0px;
 }
+
 
 .dropdownMenu a {
   text-align: center;
@@ -47,6 +97,11 @@
 
 .dropdownMenu a:hover {
   background-color: transparent !important;
+}
+
+.dropdownMenu a:focus {
+  border-radius: 20px !important;
+  color: var(--primaryfuschia);
 }
 
 .profileDropdown:hover {

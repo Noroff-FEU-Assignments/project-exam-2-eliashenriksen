@@ -12,6 +12,7 @@ export default function SingleProfile({ profileId }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [auth, setAuth] = useContext(AuthContext);
+  const [followUpdate, setFollowUpdate] = useState(1);
   const api = useAxios();
 
 
@@ -35,7 +36,7 @@ export default function SingleProfile({ profileId }) {
       getProfile();
     }
 
-  }, []);
+  }, [followUpdate]);
 
   if (loading) {
     return(
@@ -65,13 +66,16 @@ export default function SingleProfile({ profileId }) {
   return(
     <Container className={styles.singlePostContainer}>
       <SingleProfileBlock
+      followUpdate={followUpdate}
+      setFollowUpdate={setFollowUpdate}
       name={profile.name}
       email={profile.email}
       postcount={profile._count.posts}
       followercount={profile._count.followers}
       followingcount={profile._count.following}
       avatar={profile.avatar}
-      banner={profile.banner}>
+      banner={profile.banner}
+      followers={profile.followers}>
       </SingleProfileBlock>
       <SingleProfilePosts profileId={profileId}></SingleProfilePosts>
     </Container>

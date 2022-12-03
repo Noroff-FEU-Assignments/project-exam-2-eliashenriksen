@@ -25,12 +25,15 @@ a {
   text-decoration: none;
 }
 
+textarea {
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
 }
 
 .hidden {
-  /* visibility: hidden !important; */
   display: none !important;
 }
 
@@ -47,9 +50,35 @@ a {
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.096);
 }
 
+@media only screen and (max-width: 990px) {
+  .pageWrapper {
+    margin: 2rem 3rem 2rem 3rem;
+  }
+
+  .container {
+    padding: 0px;
+  }
+
+  input:focus {
+    width: 20rem !important;
+  }
+
+  textarea:focus:not(#postBlockCreateCommentTextarea) {
+    width: 20rem !important;
+  }
+}
+
+@media only screen and (max-width: 574px) {
+  .pageWrapper {
+    margin: 2rem 1rem 2rem 1rem;
+  }
+}
+
 .logoWrapper {
+  position: relative;
   width: 165px;
   height: auto;
+  z-index: 99999 !important;
 }
 
 

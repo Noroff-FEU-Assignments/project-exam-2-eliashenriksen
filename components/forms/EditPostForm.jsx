@@ -63,6 +63,27 @@ export default function EditPostForm({ postId, prefillTitle, prefillBody, prefil
 	}
 
 
+	async function deletePost() {
+		try {
+			const response = await api.delete(`/api/v1/social/posts/${postId}`);
+			console.log("AXIOS DELETE POST RESPONSE:", response); //Delete console log later
+
+      if (response.status === 200) {
+				router.push(`/home`);
+      }
+			
+		} catch (error) {
+			console.log("AXIOS DELETE POST ERROR:", error); //Delete console log later
+			setPostError(`An error occured while deleting your post. ${error.toString()}`); //Add custom error messages based on error code
+		} finally {
+			setSubmitting(false);
+		}
+	}
+
+	function cancelEdit() {
+		router.push(`/post/${postId}`);
+	}
+
   return(
     <>
 			<Modal className={styles.modalWhole} show={show} onHide={handleClose} contentClassName={styles.modalContent}>
@@ -79,7 +100,7 @@ export default function EditPostForm({ postId, prefillTitle, prefillBody, prefil
           <Button className="globalButtonStyling buttonSecondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button className="globalButtonStyling buttonPrimary" onClick={handleClose}>
+          <Button className="globalButtonStyling buttonPrimary" onClick={deletePost}>
             Delete
           </Button>
         </Modal.Footer>
@@ -116,7 +137,7 @@ export default function EditPostForm({ postId, prefillTitle, prefillBody, prefil
 					<div className={styles.formButtonWrapper1}>
 						<button onClick={handleShow} className="globalButtonStyling buttonDanger" type="button"><i className="fas fa-trash-alt"></i> Delete Post</button>
 						<button className="globalButtonStyling buttonPrimary"><i className="far fa-save"></i> Save Changes</button>
-						<button className="globalButtonStyling buttonSecondary" type="button">Cancel</button>
+						<button className="globalButtonStyling buttonSecondary" type="button" onClick={cancelEdit}>Cancel</button>
 					</div>
 				</fieldset>
 			</form>

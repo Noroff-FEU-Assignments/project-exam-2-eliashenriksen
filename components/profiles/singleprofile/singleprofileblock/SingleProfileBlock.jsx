@@ -1,16 +1,24 @@
-import Link from "next/link";
 import { Container } from "react-bootstrap";
 import Image from "next/image";
 import styles from "../../../../styles/SingleProfileBlock.module.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import AuthContext from "../../../../context/AuthContext";
 import { cloudinaryImageLoader } from "../../../../constants/remoteimageloader";
+import { useRouter } from "next/router";
+import FollowUnfollowButton from "../../FollowUnfollowButton";
 
 
-export default function SingleProfileBlock({ name, email, postcount, followercount, followingcount, avatar, banner }) {
+export default function SingleProfileBlock({ name, email, postcount, followercount, followingcount, avatar, banner, followers, followUpdate, setFollowUpdate }) {
 
 
+  const [auth, setAuth, user, setUser] = useContext(AuthContext);
   const [avatarImageSrc, setAvatarImageSrc] = useState(avatar ? `${cloudinaryImageLoader}${avatar}` : "/profileplaceholder.png");
   const [bannerImageSrc, setBannerImageSrc] = useState(banner ? `${cloudinaryImageLoader}${banner}` : "/bannerplaceholder.jpg");
+  const router = useRouter();
+
+  function moveToEditProfile() {
+    router.push("/editprofile");
+  }
 
   return(
     <Container className={styles.profileBlock}>
@@ -18,6 +26,7 @@ export default function SingleProfileBlock({ name, email, postcount, followercou
         <div className={styles.bannerImageWrapper}>
           <Image src={bannerImageSrc} alt={`${name}'s banner.`} fill onError={() => setBannerImageSrc("/bannerplaceholder.jpg")}></Image>
         </div>
+        {name === user ? <i className="fas fa-user-edit" onClick={moveToEditProfile}></i> : ""}
       </section>
       <section className={styles.profileBlockInfoWrapper}>
         <div className={styles.avatarImageWrapper}>
@@ -29,7 +38,7 @@ export default function SingleProfileBlock({ name, email, postcount, followercou
         <p>{postcount} Posts</p>
       </section>
       <section>
-        <button>Follow</button>
+        {name === user ? "" : <FollowUnfollowButton profileId={name} followers={followers} followUpdate={followUpdate} setFollowUpdate={setFollowUpdate}></FollowUnfollowButton>}
       </section>
     </Container>
   )

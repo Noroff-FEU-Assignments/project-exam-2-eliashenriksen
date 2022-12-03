@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL } from "../../constants/api";
 import { useRouter } from "next/router";
+import styles from "../../styles/RegisterForm.module.css";
 
 
 
@@ -12,7 +13,7 @@ export default function RegisterForm() {
 
   const schema = yup.object().shape({
     name: yup.string().required("Please enter a username"),
-    email: yup.string().email("Please enter a valid stud.noroff.no or noroff.no e-mail adress").required("Please enter a stud.noroff.no or noroff.no e-mail adress"),
+    email: yup.string().email("Please enter a valid stud.noroff.no or noroff.no e-mail adress (this does not need to be a real e-mail adress)").required("Please enter a stud.noroff.no or noroff.no e-mail adress (this does not need to be a real e-mail adress)"),
     password: yup.string().required("Please enter a password (minimum 8 characters)").min(8, "The password must be at least 8 characters long"),
     avatar: yup.string(),
     banner: yup.string(),
@@ -56,37 +57,51 @@ export default function RegisterForm() {
 
 	return (
 		<>
-			<form className="registerForm" onSubmit={handleSubmit(onSubmit)}>
+			<form className={styles.registerForm} onSubmit={handleSubmit(onSubmit)}>
         {registerSuccess && <span>{registerSuccess}</span>}
 				{registerError && <span>{registerError}</span>}
 				<fieldset disabled={submitting}>
 
-          <div className="formInputWrapper">
-            {errors.name && <span>{errors.name.message}</span>}
+          <div className={styles.formInputWrapper}>
+						<div className={styles.formInputSpanWrapper}>
+							{errors.name && <span>{errors.name.message}</span>}
+						</div>
 						<input name="name" placeholder="Username" {...register("name")} />
 					</div>
 
-          <div className="formInputWrapper">
-            {errors.email && <span>{errors.email.message}</span>}
+          <div className={styles.formInputWrapper}>
+						<div className={styles.formInputSpanWrapper}>
+							{errors.email && <span>{errors.email.message}</span>}
+						</div>
 						<input name="email" placeholder="E-mail" {...register("email")} />
 					</div>
 
-          <div className="formInputWrapper">
-            {errors.password && <span>{errors.password.message}</span>}
+          <div className={styles.formInputWrapper}>
+						<div className={styles.formInputSpanWrapper}>
+							{errors.password && <span>{errors.password.message}</span>}
+						</div>
 						<input name="password" placeholder="Password" type="password" {...register("password")} />
 					</div>
 
-          <div className="formInputWrapper">
-            {errors.avatar && <span>{errors.avatar.message}</span>}
-						<input name="avatar" placeholder="Avatar URL" {...register("avatar")} />
+          <div className={styles.formInputWrapper}>
+						<div className={styles.formInputSpanWrapper}>
+							{errors.avatar && <span>{errors.avatar.message}</span>}
+						</div>
+						<input name="avatar" placeholder="Avatar URL (Optional)" {...register("avatar")} />
 					</div>
 
-          <div className="formInputWrapper">
-            {errors.banner && <span>{errors.banner.message}</span>}
-						<input name="banner" placeholder="Banner URL" {...register("banner")} />
+          <div className={styles.formInputWrapper}>
+						<div className={styles.formInputSpanWrapper}>
+							{errors.banner && <span>{errors.banner.message}</span>}
+						</div>
+						<input name="banner" placeholder="Banner URL (Optional)" {...register("banner")} />
 					</div>
 
-					<button>{submitting ? "Working..." : "Register"}</button>
+					<div className={styles.formButtonWrapper1}>
+						<div className={styles.formButtonWrapper2}>
+							<button className="globalButtonStyling buttonPrimary">{submitting ? "Working..." : "Register"}</button>
+						</div>
+					</div>
 				</fieldset>
 			</form>
 		</>

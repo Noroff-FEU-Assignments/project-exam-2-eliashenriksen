@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5rem;
 }
 
 .profileBlockInfoWrapper {
@@ -10,6 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .profileBlockInfoWrapper p {
@@ -17,9 +19,24 @@
 }
 
 .bannerImageHolder {
+  position: relative;
   display: flex;
   width: 100%;
   margin: 0px 0px -75px 0px;
+}
+
+.bannerImageHolder i {
+  z-index: 99999;
+  position: absolute;
+  right: 40%;
+  bottom: -42px;
+  font-size: 32px;
+  color: white;
+}
+
+.bannerImageHolder i:hover {
+  cursor: pointer;
+  color: var(--primaryfuschia);
 }
 
 .bannerImageWrapper {
@@ -56,6 +73,7 @@
   box-shadow: 0px 3px 6px #0000002a;
   margin-bottom: 1rem;
 }
+
 
 .avatarImageWrapper img {
   object-fit: cover;

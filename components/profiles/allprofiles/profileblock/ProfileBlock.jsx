@@ -30,9 +30,6 @@ export default function ProfileBlock({ name, email, postcount, followercount, fo
           <p>{postcount} Posts</p>
         </div>
       </section>
-      <section>
-        <button>Follow</button>
-      </section>
     </Container>
   )
 }

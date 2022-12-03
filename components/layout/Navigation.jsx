@@ -28,6 +28,10 @@ export default function Navigation() {
     router.push(`/profile/${user}`);
   }
 
+  function handleEditProfile() {
+    router.push(`/editprofile`);
+  }
+
   function handleLogout() {
     setAuth(null);
     setUser(null);
@@ -40,55 +44,60 @@ export default function Navigation() {
 
   if (!auth) {
     return(
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className={styles.navbar}>
-      <Container fluid className={`navContainer w-100 ${styles.navContainer}`}>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <div className="logoWrapper">
-            <Link href="/">
-              <Image src={intouchlogo} alt="Intouch logo." layout="responsive"></Image>
-            </Link>
-          </div>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      <div className={styles.navWholeWrapper}>
+        <div className="logoWrapper">
+          <Link href="/">
+            <Image src={intouchlogo} alt="Intouch logo." layout="responsive"></Image>
+          </Link>
+        </div>
+      </div>
     )
   }
 
   return(
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className={styles.navbar}>
-      <Container fluid className={`navContainer w-100 ${styles.navContainer}`}>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <div className="logoWrapper">
-            <Link href="/home">
-              <Image src={intouchlogo} alt="Intouch logo." layout="responsive"></Image>
-            </Link>
-          </div>
-          <Nav className={`ms-auto ${styles.navbarRightSide}`}>
-            <Link href="/home">
-              Feed
-            </Link>
-            <Link href="/people">
-              People
-            </Link>
-            <Dropdown className={styles.profileDropdown}>
-              <Dropdown.Toggle id="dropdown-basic" className={styles.profileDropdown}>
-                <i className={`far fa-user ${styles.userIcon}`} aria-label="Profile"></i>
-              </Dropdown.Toggle>
+    <>
+      <div className={styles.navWholeWrapper}>
+        <div className="logoWrapper">
+          <Link href="/home">
+            <Image src={intouchlogo} alt="Intouch logo." layout="responsive"></Image>
+          </Link>
+        </div>
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className={styles.navbar}>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" className={styles.navbarToggler} />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              {/* <div className="logoWrapper">
+                <Link href="/home">
+                  <Image src={intouchlogo} alt="Intouch logo." layout="responsive"></Image>
+                </Link>
+              </div> */}
+              <Nav className={`${styles.navbarRightSide}`}>
+                <Link href="/home">
+                  Feed
+                </Link>
+                <Link href="/people">
+                  People
+                </Link>
+                <Dropdown className={styles.profileDropdown}>
+                  <Dropdown.Toggle id="dropdown-basic" className={styles.profileDropdown}>
+                    <i className={`far fa-user ${styles.userIcon}`} aria-label="Profile"></i>
+                  </Dropdown.Toggle>
 
-              <Dropdown.Menu className={styles.dropdownMenu}>
-                <Dropdown.Item onClick={handleMyProfile}>
-                  My Profile
-                </Dropdown.Item>
-                <Dropdown.Item onClick={handleLogout}>
-                  Log Out
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+                  <Dropdown.Menu className={styles.dropdownMenu}>
+                    <Dropdown.Item onClick={handleMyProfile}>
+                      My Profile
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={handleEditProfile}>
+                      Edit Profile
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={handleLogout}>
+                      Log Out
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+      </div>
+    </>
   )
 }

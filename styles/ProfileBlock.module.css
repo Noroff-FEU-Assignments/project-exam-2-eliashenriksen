@@ -3,7 +3,8 @@
   background-color: var(--backgroundtransparentdark);
   display: flex;
   padding: 1rem 3rem 1rem 3rem;
-  margin: 1rem 1rem 3rem 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   border-radius: 10px;
   flex-direction: row;
   justify-content: space-between;
@@ -11,13 +12,33 @@
   min-height: 15rem;
 }
 
+@media only screen and (max-width: 766px) {
+  .profileBlock {
+    justify-content: center;
+  }
+}
+
 .profileBlockLeft {
   display: flex;
   flex-direction: row;
 }
 
+@media only screen and (max-width: 766px) {
+  .profileBlockLeft {
+    flex-direction: column;
+  }
+}
+
 .profileBlockImageHolder {
   margin-right: 2rem;
+}
+
+@media only screen and (max-width: 766px) {
+  .profileBlockImageHolder {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+  }
 }
 
 .avatarImageWrapper {
@@ -52,4 +73,13 @@
 
 .profileBlockInfo p {
   margin: 0px;
+}
+
+@media only screen and (max-width: 766px) {
+  .profileBlockInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
