@@ -46,7 +46,7 @@ export default function FindSpecificProfile() {
           </div>
           <div className={styles.findUserFormInputWrapper}>
             <p style={{color: color}}>@</p>
-            <input name="username" placeholder="Username" {...register("username")} onFocus={focusColor} onBlur={blurColor}/>
+            <input id="findSpecificProfileInput" name="username" placeholder="Username" {...register("username")} onFocus={focusColor} onBlur={blurColor}/>
             <button className={`globalButtonStyling buttonPrimary ${styles.formButton}`}>Search</button>
           </div>
         </div>

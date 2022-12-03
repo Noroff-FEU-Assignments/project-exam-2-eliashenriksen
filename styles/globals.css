@@ -59,7 +59,7 @@ textarea {
     padding: 0px;
   }
 
-  input:focus {
+  input:focus:not(#findSpecificProfileInput) {
     width: 20rem !important;
   }
 
@@ -83,6 +83,14 @@ textarea {
   .container {
     padding: 0px;
   }
+
+  input:focus:not(#findSpecificProfileInput) {
+    width: 17rem !important;
+  }
+
+  textarea:focus:not(#postBlockCreateCommentTextarea) {
+    width: 17rem !important;
+  }
 }
 
 .logoWrapper {
@@ -101,6 +109,12 @@ h5,
 a {
   font-family: 'Manrope', sans-serif;
   color: var(--primarydark);
+}
+
+@media only screen and (max-width: 762px) {
+  h1 {
+    max-width: 20rem;
+  }
 }
 
 p, input, textarea {

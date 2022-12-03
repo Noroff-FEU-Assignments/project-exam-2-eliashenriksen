@@ -35,7 +35,7 @@ export default function PostBlockReactWithEmoji({ postId, reactionUpdateTracker,
       overlay={
         <Popover id={`popover-positioned-top`} className={styles.emojiPopover}>
           <div className={styles.emojiPicker}>
-            <Picker  data={data} onEmojiSelect={sendEmoji} maxFrequentRows={0}/>
+            <Picker perLine={7} data={data} onEmojiSelect={sendEmoji} maxFrequentRows={0}/>
           </div>
         </Popover>
       }
