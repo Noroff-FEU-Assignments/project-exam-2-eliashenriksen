@@ -79,7 +79,7 @@ export default function PostBlockCreateComment({ replyToCommentOwner, setReplyTo
 							{errors.replyToId && <span>{errors.replyToId.message}</span>}
 						</div>
 						<div className={styles.formInputLabelWrapper}>
-							<label className={styles.replyToIdLabel}>Replying to <b>{replyToCommentOwner}'s</b> comment <b>#{replyToCommentId}</b></label>
+							<label className={styles.replyToIdLabel}>Replying to <b>{replyToCommentOwner}&apos;s</b> comment <b>#{replyToCommentId}</b></label>
 							<i className="fas fa-times globalButtonStyling buttonSecondary" onClick={cancelReply}></i>
 						</div>
             <input hidden disabled name="replyToId" placeholder="Replying to" defaultValue={replyToCommentId} {...register("replyToId")} />
