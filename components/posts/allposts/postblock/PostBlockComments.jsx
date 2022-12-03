@@ -4,13 +4,15 @@ import React, { useEffect, useState} from "react";
 import useAxios from "../../../../hooks/useAxios";
 import styles from "../../../../styles/PostBlockComments.module.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-export default function PostBlockComments({ postId, commentsToggled, commentUpdateTracker }) {
+export default function PostBlockComments({ profileId, replyToCommentOwner, setReplyToCommentOwner, replyToCommentId, setReplyToCommentId, postId, commentsToggled, commentUpdateTracker }) {
 
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const api = useAxios();
+  const router = useRouter();
 
   useEffect(() => {
     async function getComments() {
@@ -60,6 +62,19 @@ export default function PostBlockComments({ postId, commentsToggled, commentUpda
     )
   }
 
+  function replyToCommentHandler(event) {
+    console.log("Reply clicked"); // delete
+    setReplyToCommentId(parseInt(event.target.id));
+    setReplyToCommentOwner(event.target.dataset.owner);
+    let currentRoute = router.pathname;
+    if (currentRoute === "/post/[pid]") {
+      currentRoute = `/post/${postId}`;
+    } else if (currentRoute === "/profile/[profileid]") {
+      currentRoute = `/profile/${profileId}`;
+    }
+    router.push(`${currentRoute}#createComment${postId}`);
+  }
+
   return(
     <Container id="postblockCommentsContainer">
       {comments.map((comment) => {
@@ -82,9 +97,10 @@ export default function PostBlockComments({ postId, commentsToggled, commentUpda
                                     <h3 className={styles.commentOwnerTitle}>{mainComment.owner}</h3>
                                   </Link>
                                 </div>
+                                <p>Comment <b>#{comment.id}</b></p>
                                 <p>{moment(mainComment.created).format("DD. MMMM YYYY, h:mm")}</p>
                               </div>
-                              <div>
+                              <div className={styles.commentBody}>
                                 <p>{mainComment.body}</p>
                               </div>
                             </div>
@@ -92,15 +108,19 @@ export default function PostBlockComments({ postId, commentsToggled, commentUpda
                       })}
                     </div>
                 </div> : ""}
-                <div>
-                  <div className={styles.commentOwnerWrapper}>
-                    <Link href={`/profile/${comment.owner}`}>
-                      <h3 className={styles.commentOwnerTitle}>{comment.owner}</h3>
-                    </Link>
+                <div className={styles.commentTopWrapper}>
+                  <div>
+                    <div className={styles.commentOwnerWrapper}>
+                      <Link href={`/profile/${comment.owner}`}>
+                        <h3 className={styles.commentOwnerTitle}>{comment.owner}</h3>
+                      </Link>
+                    </div>
+                    <p>Comment <b>#{comment.id}</b></p>
+                    <p>{moment(comment.created).format("DD. MMMM YYYY, h:mm")}</p>
                   </div>
-                  <p>{moment(comment.created).format("DD. MMMM YYYY, h:mm")}</p>
+                  <i id={comment.id} data-owner={comment.owner} aria-hidden="false" aria-label={`Reply to comment id ${comment.id} by ${comment.owner}`} className="fas fa-reply" onClick={replyToCommentHandler}></i>
                 </div>
-                <div>
+                <div className={styles.commentBody}>
                   <p>{comment.body}</p>
                 </div>
               </div>

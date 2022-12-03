@@ -30,6 +30,8 @@ export default function PostBlock({ id, title, author, body, created, media, rea
   //down to children compotents through props as needed.
   const [commentsUpdated, setCommentsUpdated] = useState(0);
   const [auth, setAuth, user, setUser] = useContext(AuthContext);
+  const [replyToCommentId, setReplyToCommentId] = useState(undefined);
+  const [replyToCommentOwner, setReplyToCommentOwner] = useState(undefined);
 
   return(
     <Container id={id} className={styles.postBlock}>
@@ -75,11 +77,11 @@ export default function PostBlock({ id, title, author, body, created, media, rea
       </section>
       <hr></hr>
       <section>
-        <PostBlockCreateComment postId={id} updateComments={setCommentsUpdated} commentsToggled={commentsToggled} toggleComments={setCommentsToggled} commentUpdateTracker={commentsUpdated}></PostBlockCreateComment>
+        <PostBlockCreateComment replyToCommentOwner={replyToCommentOwner} setReplyToCommentOwner={setReplyToCommentOwner} replyToCommentId={replyToCommentId} setReplyToCommentId={setReplyToCommentId} postId={id} updateComments={setCommentsUpdated} commentsToggled={commentsToggled} toggleComments={setCommentsToggled} commentUpdateTracker={commentsUpdated}></PostBlockCreateComment>
       </section>
       {commentsToggled ? <section className={styles.postBlockCommentSection}>
         <h3 id={`comments${id}`}>Comments</h3>
-        <PostBlockComments postId={id} commentsToggled={commentsToggled} commentUpdateTracker={commentsUpdated}></PostBlockComments>
+        <PostBlockComments profileId={profileId} replyToCommentOwner={replyToCommentOwner} setReplyToCommentOwner={setReplyToCommentOwner} replyToCommentId={replyToCommentId} setReplyToCommentId={setReplyToCommentId} postId={id} commentsToggled={commentsToggled} commentUpdateTracker={commentsUpdated}></PostBlockComments>
       </section> : ""}
     </Container>
   )

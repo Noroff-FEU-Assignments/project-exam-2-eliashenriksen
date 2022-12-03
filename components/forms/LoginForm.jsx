@@ -57,6 +57,7 @@ export default function LoginForm() {
 
 	return (
 		<>
+			<p>Please login.</p>
 			<form className={styles.loginForm} onSubmit={handleSubmit(onSubmit)}>
 				{loginError && <span>{loginError}</span>}
 				<fieldset disabled={submitting}>

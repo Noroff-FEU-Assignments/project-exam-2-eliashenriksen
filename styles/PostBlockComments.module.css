@@ -22,3 +22,28 @@
   margin-top: 2rem;
   margin-bottom: 2  rem;
 }
+
+.commentTopWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.commentTopWrapper p {
+  margin-bottom: 0px;
+}
+
+.commentTopWrapper i {
+  font-size: 32px;
+}
+
+.commentTopWrapper i:hover {
+  color: var(--primaryfuschia);
+  cursor: pointer;
+}
+
+.commentBody {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

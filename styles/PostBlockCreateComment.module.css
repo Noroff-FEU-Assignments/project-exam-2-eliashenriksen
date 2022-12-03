@@ -17,6 +17,26 @@
   width: 100%;
 }
 
+.formInputWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formInputLabelWrapper {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.formInputLabelWrapper i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+
 .createCommentForm textarea {
   resize: none;
   display: flex;
