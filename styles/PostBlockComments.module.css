@@ -5,3 +5,20 @@
   margin-bottom: 1rem;
   background-color: var(--backgroundtransparentdark);
 }
+
+.commentOwnerWrapper {
+  display: flex;
+}
+
+.commentOwnerWrapper h3 {
+  margin: 0px;
+}
+
+.commentOwnerWrapper a:hover .commentOwnerTitle {
+  color: var(--primaryfuschia) !important;
+}
+
+.commentBlock {
+  margin-top: 2rem;
+  margin-bottom: 2  rem;
+}

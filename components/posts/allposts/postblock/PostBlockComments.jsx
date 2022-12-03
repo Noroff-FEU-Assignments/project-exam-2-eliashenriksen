@@ -68,7 +68,7 @@ export default function PostBlockComments({ postId, commentsToggled, commentUpda
         console.log("replyingto data>", replyingTo);
         return(
             <React.Fragment key={comment.id}>
-              <div key={comment.id}>
+              <div key={comment.id} className={styles.commentBlock}>
                 {comment.replyToId ?                 
                   <div>
                     <h4>Replying to:</h4>
@@ -77,9 +77,11 @@ export default function PostBlockComments({ postId, commentsToggled, commentUpda
                         return(
                             <div key={mainComment.id}>
                               <div>
-                                <Link href={`/profile/${mainComment.owner}`}>
-                                  <h3>{mainComment.owner}</h3>
-                                </Link>
+                                <div className={styles.commentOwnerWrapper}>
+                                  <Link href={`/profile/${mainComment.owner}`}>
+                                    <h3 className={styles.commentOwnerTitle}>{mainComment.owner}</h3>
+                                  </Link>
+                                </div>
                                 <p>{moment(mainComment.created).format("DD. MMMM YYYY, h:mm")}</p>
                               </div>
                               <div>
@@ -91,16 +93,18 @@ export default function PostBlockComments({ postId, commentsToggled, commentUpda
                     </div>
                 </div> : ""}
                 <div>
-                  <Link href={`/profile/${comment.owner}`}>
-                    <h3>{comment.owner}</h3>
-                  </Link>
+                  <div className={styles.commentOwnerWrapper}>
+                    <Link href={`/profile/${comment.owner}`}>
+                      <h3 className={styles.commentOwnerTitle}>{comment.owner}</h3>
+                    </Link>
+                  </div>
                   <p>{moment(comment.created).format("DD. MMMM YYYY, h:mm")}</p>
                 </div>
                 <div>
                   <p>{comment.body}</p>
                 </div>
-                <hr></hr>
               </div>
+              <hr></hr>
             </React.Fragment>
           )
       })}
