@@ -13,7 +13,7 @@ export default function RegisterForm() {
 
   const schema = yup.object().shape({
     name: yup.string().required("Please enter a username"),
-    email: yup.string().email("Please enter a valid stud.noroff.no or noroff.no e-mail adress (this does not need to be a real e-mail adress)").required("Please enter a stud.noroff.no or noroff.no e-mail adress (this does not need to be a real e-mail adress)"),
+    email: yup.string().email("Please enter an e-mail that ends with @noroff.no or @stud.noroff.no (this does not need to be a real e-mail adress)").required("Please enter an e-mail that ends with @noroff.no or @stud.noroff.no (this does not need to be a real e-mail adress"),
     password: yup.string().required("Please enter a password (minimum 8 characters)").min(8, "The password must be at least 8 characters long"),
     avatar: yup.string(),
     banner: yup.string(),
@@ -48,8 +48,12 @@ export default function RegisterForm() {
         setTimeout(redirectToLogin, 3000);
       }
 		} catch (error) {
-			console.log("AXIOS REGISTER ERROR:", error);
-			setRegisterError(error.toString());
+			if (error.response.status === 400) {
+				setRegisterError("Avatar / Banner URL must be a valid image URL");
+			} else {
+				setRegisterError(`An error occured while registering. Error code : ${error}`);
+			}
+			console.log(error);
 		} finally {
 			setSubmitting(false);
 		}

@@ -7,9 +7,10 @@ import Navigation from "./Navigation";
 import Heading from "./Heading";
 import styles from "../../styles/Layout.module.css";
 import ScrollToTopButton from "./ScrollToTopButton";
+import BackButton from "./BackButton";
 
 
-export default function Layout(props) {
+export default function Layout({ title, children, backButton }) {
 
   const particlesInit = useCallback(async (engine) => {
     console.log(engine);
@@ -27,9 +28,10 @@ export default function Layout(props) {
           <Navigation></Navigation>
         </header>
         <main>
+          {backButton ? <BackButton></BackButton> : ""}
           <Container className={styles.layoutContainer}>
-            <Heading title={props.title}></Heading>
-            {props.children}
+            <Heading title={title}></Heading>
+            {children}
           </Container>
           <ScrollToTopButton></ScrollToTopButton>
         </main>

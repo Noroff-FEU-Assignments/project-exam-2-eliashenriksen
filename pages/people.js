@@ -6,7 +6,7 @@ export default function People() {
   useAuthSecurity();
 
   return(
-    <Layout title="Find cool new people to follow!">
+    <Layout title="Find cool new people to follow!" backButton={true}>
       <AllProfiles></AllProfiles>
     </Layout>
   )

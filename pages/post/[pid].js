@@ -10,7 +10,7 @@ export default function Post() {
   const { pid } = router.query
 
   return(
-    <Layout>
+    <Layout backButton={true}>
       <SinglePost postId={pid}></SinglePost>
     </Layout>
   )

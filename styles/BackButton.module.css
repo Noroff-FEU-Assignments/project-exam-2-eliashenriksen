@@ -1,0 +1,14 @@
+.backButtonHolder {
+  margin-left: 2rem;
+  margin-bottom: 3rem;
+}
+
+.backButtonHolder i {
+  font-size: 36px;
+  color: var(--primarydark);
+}
+
+.backButtonHolder i:hover {
+  color: var(--primaryfuschia);
+  cursor: pointer;
+}

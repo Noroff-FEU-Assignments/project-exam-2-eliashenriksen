@@ -8,12 +8,13 @@ export default function Home() {
   useAuthSecurity();
 
   const [postsUpdated, setPostsUpdated] = useState(0);
-  //Check if authenticated in useEffect here, send back to login page if not authenticated
+
+  const apiRoute = "/api/v1/social/posts/?_author=true&_comments=true&_reactions=true&sort=id&sortOrder=desc";
 
   return (
     <Layout title="All Posts">
       <CreatePostForm updatePosts={setPostsUpdated} postUpdateTracker={postsUpdated}></CreatePostForm>
-      <AllPosts postUpdateTracker={postsUpdated}></AllPosts>
+      <AllPosts apiRoute={apiRoute} postUpdateTracker={postsUpdated}></AllPosts>
     </Layout>
   )
 }

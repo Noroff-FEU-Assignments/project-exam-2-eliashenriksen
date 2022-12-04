@@ -6,6 +6,10 @@
   margin-bottom: 5rem;
 }
 
+.singleProfileBlockH1 {
+  margin-bottom: 1rem;
+}
+
 .profileBlockInfoWrapper {
   display: flex;
   flex-direction: column;
@@ -16,6 +20,10 @@
 
 .profileBlockInfoWrapper p {
   margin: 0px;
+}
+
+.singleProfileInfoLinks:hover p {
+  color: var(--primaryfuschia);
 }
 
 .bannerImageHolder {

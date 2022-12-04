@@ -12,7 +12,7 @@ export default function Post() {
   //Below i had to add a key to make sure the component re-mounts after going from a random single profile to the logged in users single profile, which is under the
   //same dynamic route.
   return(
-    <Layout>
+    <Layout backButton={true}>
       <SingleProfile key={profileid} profileId={profileid}></SingleProfile>
     </Layout>
   )

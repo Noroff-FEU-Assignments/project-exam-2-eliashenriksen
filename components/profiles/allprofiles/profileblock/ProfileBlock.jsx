@@ -4,12 +4,14 @@ import Image from "next/image";
 import styles from "../../../../styles/ProfileBlock.module.css";
 import { useState } from "react";
 import { cloudinaryImageLoader } from "../../../../constants/remoteimageloader";
+import { useRouter } from "next/router";
 
 
 export default function ProfileBlock({ name, email, postcount, followercount, followingcount, avatar, banner }) {
 
 
   const [avatarImageSrc, setAvatarImageSrc] = useState(avatar ? `${cloudinaryImageLoader}${avatar}` : "/profileplaceholder.png");
+  const router = useRouter();
 
   return(
     <Container className={styles.profileBlock}>
@@ -25,9 +27,21 @@ export default function ProfileBlock({ name, email, postcount, followercount, fo
           <Link href={`/profile/${name}`}>
             <h2>@{name}</h2>
           </Link>
-          <p>{followercount} Followers</p>
-          <p>{followingcount} Following</p>
-          <p>{postcount} Posts</p>
+          {router.asPath.includes("followers") || router.asPath.includes("following") ? "" : 
+          <Link className={styles.singleProfileInfoLinks} href={`/followers/${name}`}>
+            <p><b>{followercount}</b> Followers</p>
+          </Link>
+          }
+          {router.asPath.includes("followers") || router.asPath.includes("following") ? "" : 
+          <Link className={styles.singleProfileInfoLinks} href={`/following/${name}`}>
+            <p><b>{followingcount}</b> Following</p>
+          </Link>
+          }
+          {router.asPath.includes("followers") || router.asPath.includes("following") ? "" : 
+          <Link className={styles.singleProfileInfoLinks} href={`/profile/${name}`} scroll={false}>
+            <p><b>{postcount}</b> Posts</p>
+          </Link>
+          }
         </div>
       </section>
     </Container>

@@ -45,7 +45,12 @@ export default function LoginForm() {
       }
 		} catch (error) {
 			console.log("AXIOS LOGIN ERROR:", error); //Delete console log later
-			setLoginError("An error occured while signing in."); //Add custom error messages based on error code
+			if (error.response.status === 401) {
+				setLoginError("Incorrect username or password.");
+			} else {
+				setLoginError("An error occured while signing in.");
+			}
+			console.log(error);
 		} finally {
 			setSubmitting(false);
 		}

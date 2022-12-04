@@ -72,6 +72,9 @@ export default function Navigation() {
               </div> */}
               <Nav className={`${styles.navbarRightSide}`}>
                 <Link href="/home">
+                  Home
+                </Link>
+                <Link href="/feed">
                   Feed
                 </Link>
                 <Link href="/people">

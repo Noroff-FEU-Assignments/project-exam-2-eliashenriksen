@@ -3,9 +3,9 @@
   padding-bottom: 2rem !important;
 } */
 
-.createPostForm {
+/* .createPostForm {
   margin-top: 3rem;
-}
+} */
 
 .createPostForm, .createPostForm div {
   flex-direction: column;

@@ -14,6 +14,7 @@ html {
   background-size: 100% 100%;
   animation: backgroundGradientAnimation 20s ease infinite;
   min-height: 100vh;
+  scroll-behavior: smooth !important;
 }
 
 body {
@@ -109,6 +110,10 @@ h5,
 a {
   font-family: 'Manrope', sans-serif;
   color: var(--primarydark);
+}
+
+h1 {
+  margin-bottom: 5rem;
 }
 
 @media only screen and (max-width: 762px) {

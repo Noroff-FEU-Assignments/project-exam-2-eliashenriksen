@@ -34,7 +34,7 @@ export default function PostBlock({ id, title, author, body, created, media, rea
   const [replyToCommentOwner, setReplyToCommentOwner] = useState(undefined);
 
   return(
-    <Container id={id} className={styles.postBlock}>
+    <Container id={id} name={`postBy${author.name}`} className={styles.postBlock}>
       <section>
         <div className={styles.postBlockTop}>
           <Link className={styles.postBlockTopAvatarImageLink} href={`/profile/${author.name}`}>
@@ -59,7 +59,7 @@ export default function PostBlock({ id, title, author, body, created, media, rea
               </div>
               <div className={styles.postBlockTopInfoTitleWrapper}>
                 <Link href={`/post/${id}`}>
-                  <p>#{id}</p>
+                  <p><b>#{id}</b></p>
                   <p>| {title}</p>
                 </Link>
               </div>

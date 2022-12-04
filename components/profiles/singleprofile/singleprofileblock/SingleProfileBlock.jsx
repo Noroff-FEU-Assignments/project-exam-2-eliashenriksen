@@ -6,6 +6,7 @@ import AuthContext from "../../../../context/AuthContext";
 import { cloudinaryImageLoader } from "../../../../constants/remoteimageloader";
 import { useRouter } from "next/router";
 import FollowUnfollowButton from "../../FollowUnfollowButton";
+import Link from "next/link";
 
 
 export default function SingleProfileBlock({ name, email, postcount, followercount, followingcount, avatar, banner, followers, followUpdate, setFollowUpdate }) {
@@ -32,10 +33,16 @@ export default function SingleProfileBlock({ name, email, postcount, followercou
         <div className={styles.avatarImageWrapper}>
           <Image src={avatarImageSrc} alt={`${name}'s avatar.`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" onError={() => setAvatarImageSrc("/profileplaceholder.jpg")}></Image>
         </div>
-        <h1>{name}</h1>
-        <p>{followercount} Followers</p>
-        <p>{followingcount} Following</p>
-        <p>{postcount} Posts</p>
+        <h1 className={styles.singleProfileBlockH1}>{name}</h1>
+        <Link className={styles.singleProfileInfoLinks} href={`/followers/${name}`}>
+          <p><b>{followercount}</b> Followers</p>
+        </Link>
+        <Link className={styles.singleProfileInfoLinks} href={`/following/${name}`}>
+          <p><b>{followingcount}</b> Following</p>
+        </Link>
+        <Link className={styles.singleProfileInfoLinks} href={`#postBy${name}`}>
+          <p><b>{postcount}</b> Posts</p>
+        </Link>
       </section>
       <section>
         {name === user ? "" : <FollowUnfollowButton profileId={name} followers={followers} followUpdate={followUpdate} setFollowUpdate={setFollowUpdate}></FollowUnfollowButton>}

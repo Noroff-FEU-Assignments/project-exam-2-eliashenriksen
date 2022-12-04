@@ -4,7 +4,7 @@ import { useEffect, useState, useContext } from "react";
 import AuthContext from "../../../context/AuthContext";
 import PostBlock from "./postblock/PostBlock";
 
-export default function AllPosts({ postUpdateTracker }) {
+export default function AllPosts({ postUpdateTracker, apiRoute }) {
 
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,7 +16,7 @@ export default function AllPosts({ postUpdateTracker }) {
   useEffect(() => {
     async function getAllPosts() {
       try {
-        const firstCall = await api.get("/api/v1/social/posts/?_author=true&_comments=true&_reactions=true&sort=id&sortOrder=desc");
+        const firstCall = await api.get(apiRoute);
         console.log("api data >", firstCall.data, firstCall); // delete console log
         setPosts(firstCall.data);
 

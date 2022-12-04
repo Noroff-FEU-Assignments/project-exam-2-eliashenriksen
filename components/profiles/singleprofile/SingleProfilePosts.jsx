@@ -53,7 +53,7 @@ export default function SingleProfilePosts({ profileId }) {
   }
 
   return (
-    <Container>
+    <Container id={`#postList${profileId}`}>
       {posts.map((post) => {
         return(
           <PostBlock 

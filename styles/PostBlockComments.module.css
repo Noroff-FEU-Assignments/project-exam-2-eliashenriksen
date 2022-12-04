@@ -36,6 +36,7 @@
 
 .commentTopWrapper i {
   font-size: 32px;
+  color: var(--primarydark);
 }
 
 .commentTopWrapper i:hover {

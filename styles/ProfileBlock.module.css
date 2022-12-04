@@ -75,6 +75,10 @@
   margin: 0px;
 }
 
+.singleProfileInfoLinks:hover p {
+  color: var(--primaryfuschia);
+}
+
 @media only screen and (max-width: 766px) {
   .profileBlockInfo {
     display: flex;

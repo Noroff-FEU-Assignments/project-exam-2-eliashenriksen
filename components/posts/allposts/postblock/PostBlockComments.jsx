@@ -115,7 +115,7 @@ export default function PostBlockComments({ profileId, replyToCommentOwner, setR
                         <h3 className={styles.commentOwnerTitle}>{comment.owner}</h3>
                       </Link>
                     </div>
-                    <p>Comment <b>#{comment.id}</b></p>
+                    <p>Comment ID <b>#{comment.id}</b></p>
                     <p>{moment(comment.created).format("DD. MMMM YYYY, h:mm")}</p>
                   </div>
                   <i id={comment.id} data-owner={comment.owner} aria-hidden="false" aria-label={`Reply to comment id ${comment.id} by ${comment.owner}`} className="fas fa-reply" onClick={replyToCommentHandler}></i>
