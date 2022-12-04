@@ -10,7 +10,7 @@ export default function BackButton() {
 
   return(
     <div className={styles.backButtonHolder}>
-      <i className="fas fa-arrow-left" onClick={goBack}></i>
+      <i aria-hidden="false" aria-label="Back button" className="fas fa-arrow-left" onClick={goBack}></i>
     </div>
   )
 }

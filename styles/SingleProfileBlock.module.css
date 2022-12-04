@@ -39,7 +39,7 @@
   right: 40%;
   bottom: -42px;
   font-size: 32px;
-  color: white;
+  color: var(--primarydark);
 }
 
 @media only screen and (max-width: 1570px) {

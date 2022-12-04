@@ -11,7 +11,7 @@ export default function ProfileFollowers() {
 
 
   return(
-    <Layout title={`${profileid}'s followers`} backButton={true}>
+    <Layout pageTitle={`Intouch ${profileid} Followers`} pageDescription={`Take a look at ${profileid}'s list of followers on Intouch.`} title={`${profileid}'s followers`} backButton={true}>
       <Followers profileId={profileid}></Followers>
     </Layout>
   )

@@ -7,15 +7,9 @@ import styles from "../../styles/CreatePostForm.module.css";
 
 export default function CreatePostForm({ postUpdateTracker, updatePosts}) {
 
-
-  const urlExpression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
-  const urlMatcher = new RegExp(urlExpression);
-
-	// .matches(urlMatcher, "Please provide a valid image URL")
-
   const schema = yup.object().shape({
     title: yup.string().required("Please enter a title"),
-    body: yup.string(),
+    body: yup.string().max(250, "Your message can be a maximum of 250 characters long."),
     // tags: yup.string() array of strings,
     media: yup.string(),
   });
@@ -46,8 +40,12 @@ export default function CreatePostForm({ postUpdateTracker, updatePosts}) {
       }
 			
 		} catch (error) {
-			console.log("AXIOS CREATE POST ERROR:", error); //Delete console log later
-			setPostError(`An error occured while creating your post. ${error.toString()}`); //Add custom error messages based on error code
+			if (error.response.status === 400) {
+				setPostError(`An error occured while creating your post. ${error.toString()}. Please make sure you provide a valid image URL if you are posting media.`);
+			} else {
+				setPostError(`An error occured while creating your post. ${error.toString()}`);
+			}
+			console.log(error);
 		} finally {
 			setSubmitting(false);
 		}

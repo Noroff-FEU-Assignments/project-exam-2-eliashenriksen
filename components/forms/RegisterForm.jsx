@@ -11,9 +11,18 @@ import styles from "../../styles/RegisterForm.module.css";
 
 export default function RegisterForm() {
 
+
+	function testNoroffEmail(input) {
+		if (input.toLowerCase().includes("@noroff.no") || input.toLowerCase().includes("@stud.noroff.no")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
   const schema = yup.object().shape({
     name: yup.string().required("Please enter a username"),
-    email: yup.string().email("Please enter an e-mail that ends with @noroff.no or @stud.noroff.no (this does not need to be a real e-mail adress)").required("Please enter an e-mail that ends with @noroff.no or @stud.noroff.no (this does not need to be a real e-mail adress"),
+    email: yup.string().lowercase().email("Please enter an e-mail that ends with @noroff.no or @stud.noroff.no (this does not need to be a real e-mail adress)").required("Please enter an e-mail that ends with @noroff.no or @stud.noroff.no (this does not need to be a real e-mail adress)").test("Please enter an e-mail that ends with @noroff.no or @stud.noroff.no (this does not need to be a real e-mail adress)", "Please enter an e-mail that ends with @noroff.no or @stud.noroff.no (this does not need to be a real e-mail adress)", (value) => testNoroffEmail(value)),
     password: yup.string().required("Please enter a password (minimum 8 characters)").min(8, "The password must be at least 8 characters long"),
     avatar: yup.string(),
     banner: yup.string(),

@@ -6,7 +6,7 @@ export default function People() {
   useAuthSecurity();
 
   return(
-    <Layout title="Find cool new people to follow!" backButton={true}>
+    <Layout pageTitle="Intouch Users" pageDescription="Find cool new people to connect with on Intouch!" title="Find cool new people to follow!" backButton={true}>
       <AllProfiles></AllProfiles>
     </Layout>
   )

@@ -8,9 +8,10 @@ import Heading from "./Heading";
 import styles from "../../styles/Layout.module.css";
 import ScrollToTopButton from "./ScrollToTopButton";
 import BackButton from "./BackButton";
+import Head from "next/head";
 
 
-export default function Layout({ title, children, backButton }) {
+export default function Layout({ title, children, backButton, pageTitle, pageDescription }) {
 
   const particlesInit = useCallback(async (engine) => {
     console.log(engine);
@@ -23,6 +24,10 @@ export default function Layout({ title, children, backButton }) {
 
   return (
     <>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} key="desc"></meta>
+      </Head>
       <div className="pageWrapper">
         <header>
           <Navigation></Navigation>

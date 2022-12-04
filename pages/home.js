@@ -12,7 +12,7 @@ export default function Home() {
   const apiRoute = "/api/v1/social/posts/?_author=true&_comments=true&_reactions=true&sort=id&sortOrder=desc";
 
   return (
-    <Layout title="All Posts">
+    <Layout pageTitle="Intouch Home" pageDescription="Share something with the world, or see what others are up to!" title="All Posts">
       <CreatePostForm updatePosts={setPostsUpdated} postUpdateTracker={postsUpdated}></CreatePostForm>
       <AllPosts apiRoute={apiRoute} postUpdateTracker={postsUpdated}></AllPosts>
     </Layout>

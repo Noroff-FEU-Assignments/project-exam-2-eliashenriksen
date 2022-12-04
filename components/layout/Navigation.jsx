@@ -65,11 +65,6 @@ export default function Navigation() {
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className={styles.navbar}>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" className={styles.navbarToggler} />
             <Navbar.Collapse id="responsive-navbar-nav">
-              {/* <div className="logoWrapper">
-                <Link href="/home">
-                  <Image src={intouchlogo} alt="Intouch logo." layout="responsive"></Image>
-                </Link>
-              </div> */}
               <Nav className={`${styles.navbarRightSide}`}>
                 <Link href="/home">
                   Home

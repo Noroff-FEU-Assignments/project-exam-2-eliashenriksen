@@ -10,7 +10,7 @@ export default function ManagePost() {
   const { postid } = router.query
 
   return(
-    <Layout>
+    <Layout pageTitle={`Intouch Manage Post #${postid}`} pageDescription="Edit or delete your Intouch post.">
       <EditPost postId={postid}></EditPost>
     </Layout>
   )

@@ -12,7 +12,7 @@ export default function ProfileFollowing() {
 
 
   return(
-    <Layout title={`${profileid} is following`} backButton={true}>
+    <Layout pageTitle={`Intouch ${profileid} Following`} pageDescription={`Find out who ${profileid} is following on Intouch.`} title={`${profileid} is following`} backButton={true}>
       <Following profileId={profileid}></Following>
     </Layout>
   )

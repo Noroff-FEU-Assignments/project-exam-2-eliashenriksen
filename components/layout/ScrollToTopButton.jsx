@@ -27,6 +27,6 @@ export default function ScrollToTopButton() {
   }
 
   return(
-    <button className={styles.scrollToTopButtonWrapper} style={{display: display ? "flex" : "none" }} onClick={scrollToTopHandler}><i className="fas fa-arrow-up"></i></button>
+    <button aria-label="Scroll to top button" className={styles.scrollToTopButtonWrapper} style={{display: display ? "flex" : "none" }} onClick={scrollToTopHandler}><i className="fas fa-arrow-up"></i></button>
   )
 }

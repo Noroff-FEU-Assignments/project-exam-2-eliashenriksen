@@ -52,7 +52,6 @@ export default function PostBlock({ id, title, author, body, created, media, rea
               <div className={styles.postBlockTimeWrapper}>
                 <div className={styles.postBlockTimeWrapper2}>
                   <p>{moment(created).format("DD. MMMM YYYY, h:mm")} | Posted</p>
-                  {/* <p>{moment(updated).format("DD. MMMM YYYY, h:mm")} Last Edit</p> */}
                   {created === updated ? "" : <p>{moment(updated).format("DD. MMMM YYYY, h:mm")} | Last Edit</p>}
                 </div>
                 {author.name === user ? <PostBlockManagePostButton postId={id}></PostBlockManagePostButton> : ""}

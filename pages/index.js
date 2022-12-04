@@ -18,7 +18,7 @@ export default function Login() {
 
 
   return (
-    <Layout title="Welcome to Intouch!">
+    <Layout pageTitle="Intouch Login" pageDescription="Please login to proceed to Intouch or register an account if you are a new member." title="Welcome to Intouch!">
       <LoginForm></LoginForm>
     </Layout>
   )

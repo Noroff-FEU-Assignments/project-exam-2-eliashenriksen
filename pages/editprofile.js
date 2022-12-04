@@ -55,7 +55,7 @@ export default function EditProfile() {
   }
 
   return(
-    <Layout>
+    <Layout pageTitle="Intouch Edit Profile" pageDescription="Edit your Intouch profile.">
       <EditProfileForm name={profile.name} email={profile.email} avatar={profile.avatar} banner={profile.banner}></EditProfileForm>
     </Layout>
   )

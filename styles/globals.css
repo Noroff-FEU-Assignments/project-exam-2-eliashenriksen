@@ -4,8 +4,9 @@
   --primarydark: #3D4057;
   --primaryfuschia: #FF287D;
   --primaryturq: #19f7dd;
-  --backgroundtransparentdark: #3d405718;
+  --backgroundtransparentdark: rgba(61, 64, 87, 0.094);
   --backgroundtransparentlight: rgba(255, 253, 253, 0.226);
+  white: #ffff
 }
 
 
@@ -52,6 +53,11 @@ textarea {
 }
 
 @media only screen and (max-width: 990px) {
+
+  span {
+    max-width: 20rem;
+  }
+
   .pageWrapper {
     margin: 2rem 3rem 2rem 3rem;
   }
