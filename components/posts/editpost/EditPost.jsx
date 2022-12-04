@@ -5,7 +5,6 @@ import EditPostForm from "../../forms/EditPostForm";
 
 export default function EditPost({ postId }) {
 
-  
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,7 +15,6 @@ export default function EditPost({ postId }) {
     async function getPost() {
       try {
         const firstCall = await api.get(`/api/v1/social/posts/${postId}`);
-        console.log("api data for single post >", firstCall.data, firstCall); // delete console log
         setPost(firstCall.data);
 
       } catch (error) {

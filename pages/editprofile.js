@@ -19,7 +19,6 @@ export default function EditProfile() {
     async function getProfile() {
       try {
         const firstCall = await api.get(`/api/v1/social/profiles/${user}`);
-        console.log("api data for single profile >", firstCall.data, firstCall); // delete console log
         setProfile(firstCall.data);
 
       } catch (error) {

@@ -10,16 +10,9 @@ import Modal from 'react-bootstrap/Modal';
 
 export default function EditPostForm({ postId, prefillTitle, prefillBody, prefillTags, prefillMedia }) {
 
-
-  const urlExpression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
-  const urlMatcher = new RegExp(urlExpression);
-
-	// .matches(urlMatcher, "Please provide a valid image URL")
-
   const schema = yup.object().shape({
     title: yup.string().required("Please enter a title"),
     body: yup.string(),
-    // tags: yup.string() array of strings,
     media: yup.string(),
   });
 
@@ -27,7 +20,6 @@ export default function EditPostForm({ postId, prefillTitle, prefillBody, prefil
         resolver: yupResolver(schema), 
 	});
 
-	
 	const [submitting, setSubmitting] = useState(false);
 	const [postError, setPostError] = useState(null);
   const [postSuccess, setPostSuccess] = useState(null);
@@ -41,41 +33,34 @@ export default function EditPostForm({ postId, prefillTitle, prefillBody, prefil
   async function onSubmit(data) {
 		setSubmitting(true);
 		setPostError(null);
-		console.log(data); // delete
 
 		try {
 			const response = await api.put(`/api/v1/social/posts/${postId}`, data);
-			console.log("AXIOS UPDATE POST RESPONSE:", response); //Delete console log later
 
       if (response.data.id) {
         setPostSuccess("Post updated succesfully!");
 				router.push(`/post/${postId}`);
-				// setTimeout(() => {
-				// 	router.push(`/post/${postId}`);
-				// }, 3000);
       }
 			
 		} catch (error) {
-			console.log("AXIOS UPDATE POST ERROR:", error); //Delete console log later
-			setPostError(`An error occured while updating your post. ${error.toString()}`); //Add custom error messages based on error code
+			console.log(error);
+			setPostError(`An error occured while updating your post. ${error.toString()}`);
 		} finally {
 			setSubmitting(false);
 		}
 	}
 
-
 	async function deletePost() {
 		try {
 			const response = await api.delete(`/api/v1/social/posts/${postId}`);
-			console.log("AXIOS DELETE POST RESPONSE:", response); //Delete console log later
 
       if (response.status === 200) {
 				router.push(`/home`);
       }
 			
 		} catch (error) {
-			console.log("AXIOS DELETE POST ERROR:", error); //Delete console log later
-			setPostError(`An error occured while deleting your post. ${error.toString()}`); //Add custom error messages based on error code
+			console.log(error);
+			setPostError(`An error occured while deleting your post. ${error.toString()}`);
 		} finally {
 			setSubmitting(false);
 		}

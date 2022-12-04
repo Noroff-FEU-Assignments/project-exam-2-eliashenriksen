@@ -15,18 +15,12 @@ export default function FindSpecificProfile() {
         resolver: yupResolver(schema), 
 	});
 
-
   const [color, setColor] = useState("#3d405718");
   const router = useRouter();
 
 	async function onSubmit(data) {
-		console.log("search profile submit data", data.username); // delete console log
     router.push(`/profile/${data.username}`);
 	}
-
-  // function redirectToRegister() {
-	// 	router.push("/register");
-  // }
 
   function focusColor() {
     setColor("#FF287D");

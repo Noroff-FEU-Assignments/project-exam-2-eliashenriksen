@@ -19,7 +19,6 @@ export default function Followers({ profileId }) {
     async function getProfile() {
       try {
         const firstCall = await api.get(`/api/v1/social/profiles/${profileId}?_following=true&_followers=true`);
-        console.log("api data for single post >", firstCall.data, firstCall); //delete console log
         setFollowers(firstCall.data.followers);
 
       } catch (error) {

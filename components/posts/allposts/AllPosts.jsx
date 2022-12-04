@@ -12,12 +12,10 @@ export default function AllPosts({ postUpdateTracker, apiRoute }) {
   const [auth, setAuth] = useContext(AuthContext);
   const api = useAxios();
 
-
   useEffect(() => {
     async function getAllPosts() {
       try {
         const firstCall = await api.get(apiRoute);
-        console.log("api data >", firstCall.data, firstCall); // delete console log
         setPosts(firstCall.data);
 
       } catch (error) {

@@ -10,7 +10,6 @@ export default function CreatePostForm({ postUpdateTracker, updatePosts}) {
   const schema = yup.object().shape({
     title: yup.string().required("Please enter a title"),
     body: yup.string().max(250, "Your message can be a maximum of 250 characters long."),
-    // tags: yup.string() array of strings,
     media: yup.string(),
   });
 
@@ -23,15 +22,12 @@ export default function CreatePostForm({ postUpdateTracker, updatePosts}) {
   const [postSuccess, setPostSuccess] = useState(null);
   const api = useAxios();
 
-
   async function onSubmit(data) {
 		setSubmitting(true);
 		setPostError(null);
-		console.log(data); // delete
 
 		try {
 			const response = await api.post(`/api/v1/social/posts`, data);
-			console.log("AXIOS CREATE POST RESPONSE:", response); //Delete console log later
 
       if (response.data.id) {
         setPostSuccess("Post created!");

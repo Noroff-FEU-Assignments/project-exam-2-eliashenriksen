@@ -8,12 +8,6 @@ import { useRouter } from "next/router";
 
 export default function EditProfileForm({ name, email, avatar, banner }) {
 
-
-  const urlExpression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
-  const urlMatcher = new RegExp(urlExpression);
-
-	// .matches(urlMatcher, "Please provide a valid image URL")
-
   const schema = yup.object().shape({
     banner: yup.string(),
     avatar: yup.string(),
@@ -23,7 +17,6 @@ export default function EditProfileForm({ name, email, avatar, banner }) {
         resolver: yupResolver(schema), 
 	});
 
-	
 	const [submitting, setSubmitting] = useState(false);
 	const [postError, setPostError] = useState(null);
   const [postSuccess, setPostSuccess] = useState(null);
@@ -33,23 +26,18 @@ export default function EditProfileForm({ name, email, avatar, banner }) {
   async function onSubmit(data) {
 		setSubmitting(true);
 		setPostError(null);
-		console.log(data); // delete
 
 		try {
 			const response = await api.put(`/api/v1/social/profiles/${name}/media`, data);
-			console.log("AXIOS UPDATE PROFILE RESPONSE:", response); //Delete console log later
 
       if (response.data.name) {
         setPostSuccess("Profile updated succesfully!");
         router.push(`/profile/${name}`);
-				// setTimeout(() => {
-				// 	router.push(`/profile/${name}`);
-				// }, 3000);
       }
 			
 		} catch (error) {
-			console.log("AXIOS UPDATE PROFILE ERROR:", error); //Delete console log later
-			setPostError(`An error occured while updating your profile. ${error.toString()}`); //Add custom error messages based on error code
+			console.log(error);
+			setPostError(`An error occured while updating your profile. ${error.toString()}`);
 		} finally {
 			setSubmitting(false);
 		}

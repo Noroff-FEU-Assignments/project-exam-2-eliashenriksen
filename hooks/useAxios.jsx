@@ -14,11 +14,5 @@ export default function useAxios() {
   apiClient.defaults.headers.common['Authorization'] = `Bearer ${auth}`;
  }
 
-//  apiClient.interceptors.request.use(function (config) {
-//   const token = auth;
-//   config.headers.Authorization = token ? `Bearer ${token}` : "";
-//   return config;
-//  });
-
  return apiClient;
 }

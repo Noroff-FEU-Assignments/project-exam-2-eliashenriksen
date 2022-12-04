@@ -17,7 +17,6 @@ export default function SingleProfilePosts({ profileId }) {
     async function getAllPosts() {
       try {
         const firstCall = await api.get(`/api/v1/social/profiles/${profileId}/posts?_author=true&_comments=true&_reactions=true&sort=id&sortOrder=desc`);
-        console.log("api data >", firstCall.data, firstCall); // delete console log
         setPosts(firstCall.data);
 
       } catch (error) {

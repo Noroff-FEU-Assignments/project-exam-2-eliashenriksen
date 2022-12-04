@@ -6,7 +6,6 @@
   --primaryturq: #19f7dd;
   --backgroundtransparentdark: rgba(61, 64, 87, 0.094);
   --backgroundtransparentlight: rgba(255, 253, 253, 0.226);
-  white: #ffff
 }
 
 
@@ -113,7 +112,7 @@ h2,
 h3,
 h4,
 h5,
-a {
+a, label {
   font-family: 'Manrope', sans-serif;
   color: var(--primarydark);
 }
@@ -148,7 +147,6 @@ p, input, textarea {
 
 .buttonPrimary {
   color: white;
-  background-color: var(--primaryturq);
   background: linear-gradient(90deg, rgba(10, 164, 151, 1) 0%, rgb(25, 247, 221) 100%);
   border: solid 2px rgb(0, 226, 200);
   transition: all 1s;
@@ -163,7 +161,6 @@ p, input, textarea {
 
 .buttonSecondary {
   color: white;
-  background-color: var(--primarydark);
   background: linear-gradient(90deg, rgba(35, 37, 50, 1) 0%, rgb(98, 102, 138) 100%);
   border: solid 2px rgba(61, 64, 87, 1);
   transition: all 1s;
@@ -178,7 +175,6 @@ p, input, textarea {
 
 .buttonDanger {
   color: white;
-  background-color: var(--primaryfuschia);
   background: linear-gradient(90deg, rgb(158, 10, 69) 0%, rgb(255, 23, 116) 100%);
   border: solid 2px rgb(204, 0, 82);
   transition: all 1s;

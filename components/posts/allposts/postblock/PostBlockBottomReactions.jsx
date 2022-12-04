@@ -13,9 +13,7 @@ export default function PostBlockBottomReactions({ postId, reactionUpdateTracker
     async function getReactions() {
       try {
         const firstCall = await api.get(`/api/v1/social/posts/${postId}?_reactions=true`);
-        console.log("api reaction data >", firstCall.data);
         setReactions(firstCall.data.reactions);
-        console.log(reactions);
 
       } catch (error) {
         console.log(error);
@@ -41,24 +39,6 @@ export default function PostBlockBottomReactions({ postId, reactionUpdateTracker
 
   return(
     <Container className={styles.reactionHolder}>
-      {/* {reactionsOnLoad.map((reaction) => {
-        return(
-          <div key={reaction.symbol}>
-            <p>{reaction.symbol}</p>
-            <p>{reaction.count}</p>
-          </div>
-        )
-      })} */}
-
-      {/* {reactions ? reactions.map((reaction) => {
-          return(
-            <div key={reaction.symbol}>
-              <p>{reaction.symbol}</p>
-              <p>{reaction.count}</p>
-            </div>
-          )
-        }) : ""} */}
-
         {reactions.map((reaction) => {
           return(
             <div key={reaction.symbol}>

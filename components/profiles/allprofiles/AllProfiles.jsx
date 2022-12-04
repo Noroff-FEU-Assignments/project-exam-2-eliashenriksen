@@ -3,7 +3,6 @@ import { Container } from "react-bootstrap";
 import { useEffect, useState, useContext } from "react";
 import AuthContext from "../../../context/AuthContext";
 import ProfileBlock from "./profileblock/ProfileBlock";
-import { useRouter } from "next/router";
 import FindSpecificProfile from "./FindSpecificProfile";
 
 
@@ -14,14 +13,12 @@ export default function AllProfiles() {
   const [error, setError] = useState(null);
   const [auth, setAuth] = useContext(AuthContext);
   const api = useAxios();
-  const router = useRouter();
 
 
   useEffect(() => {
     async function getAllProfiles() {
       try {
         const firstCall = await api.get("/api/v1/social/profiles?_following=true&_followers=true");
-        console.log("api data >", firstCall.data, firstCall); // delete console log
         setProfiles(firstCall.data);
 
       } catch (error) {

@@ -8,7 +8,6 @@ export default function Home() {
   useAuthSecurity();
 
   const [postsUpdated, setPostsUpdated] = useState(0);
-
   const apiRoute = "/api/v1/social/posts/?_author=true&_comments=true&_reactions=true&sort=id&sortOrder=desc";
 
   return (

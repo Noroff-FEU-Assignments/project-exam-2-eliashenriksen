@@ -8,9 +8,7 @@ import { useRouter } from "next/router";
 import styles from "../../styles/RegisterForm.module.css";
 
 
-
 export default function RegisterForm() {
-
 
 	function testNoroffEmail(input) {
 		if (input.toLowerCase().includes("@noroff.no") || input.toLowerCase().includes("@stud.noroff.no")) {
@@ -36,18 +34,14 @@ export default function RegisterForm() {
 	const [submitting, setSubmitting] = useState(false);
 	const [registerError, setRegisterError] = useState(null);
   const [registerSuccess, setRegisterSuccess] = useState(null);
-
-
   const router = useRouter();
 
 	async function onSubmit(data) {
 		setSubmitting(true);
 		setRegisterError(null);
-		console.log(data); // delete
 
 		try {
 			const response = await axios.post(BASE_URL + "/api/v1/social/auth/register", data);
-			console.log("AXIOS REGISTER RESPONSE:", response);
     
       if (response.data.id) {
         function redirectToLogin() {

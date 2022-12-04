@@ -9,7 +9,6 @@ export default function PostBlockBottom({ reactions, comments, toggleComments, p
 
   const [reactionUpdateTracker, setReactionUpdateTracker] = useState(0);
   const router = useRouter();
-  // console.log("current route:", router.pathname); // delete console log
 
   //I use this component in several places and therefore need some dynamic code to handle the different scenarios it appears in. This is due to how Next routing works,
   //and how i have decided to solve the UX of relocation to the comment section. I use custom ID tags for the specific comment sections and then push the router to
@@ -27,10 +26,7 @@ export default function PostBlockBottom({ reactions, comments, toggleComments, p
 
   function commentToggler() {
     toggleComments(true);
-    console.log(postId); // delete console log
     router.push(`${currentRoute}#comments${postId}`, undefined, { shallow: true });
-    console.log("comments toggled!"); // delete console log
-    console.log("pushing route to", currentRoute);
   }
 
   return(

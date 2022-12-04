@@ -13,6 +13,7 @@ import Head from "next/head";
 
 export default function Layout({ title, children, backButton, pageTitle, pageDescription }) {
 
+  //TSparticles code (for the moving background circles)
   const particlesInit = useCallback(async (engine) => {
     console.log(engine);
     await loadFull(engine);

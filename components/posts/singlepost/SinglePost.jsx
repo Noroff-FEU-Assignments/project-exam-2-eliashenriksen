@@ -2,7 +2,6 @@ import useAxios from "../../../hooks/useAxios";
 import { Container } from "react-bootstrap";
 import { useEffect, useState, useContext } from "react";
 import AuthContext from "../../../context/AuthContext";
-// import SinglePostBlock from "./postblock/SinglePostBlock";
 import PostBlock from "../allposts/postblock/PostBlock";
 import styles from "../../../styles/SinglePost.module.css";
 
@@ -19,7 +18,6 @@ export default function SinglePost({ postId }) {
     async function getPost() {
       try {
         const firstCall = await api.get(`/api/v1/social/posts/${postId}?_author=true&_comments=true&_reactions=true`);
-        console.log("api data for single post >", firstCall.data, firstCall); // delete console log
         setPost(firstCall.data);
 
       } catch (error) {

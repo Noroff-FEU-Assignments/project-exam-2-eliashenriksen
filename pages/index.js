@@ -16,7 +16,6 @@ export default function Login() {
   }, [])
 
 
-
   return (
     <Layout pageTitle="Intouch Login" pageDescription="Please login to proceed to Intouch or register an account if you are a new member." title="Welcome to Intouch!">
       <LoginForm></LoginForm>

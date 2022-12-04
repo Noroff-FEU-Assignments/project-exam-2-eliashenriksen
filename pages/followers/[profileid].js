@@ -9,7 +9,6 @@ export default function ProfileFollowers() {
   const router = useRouter()
   const { profileid } = router.query
 
-
   return(
     <Layout pageTitle={`Intouch ${profileid} Followers`} pageDescription={`Take a look at ${profileid}'s list of followers on Intouch.`} title={`${profileid}'s followers`} backButton={true}>
       <Followers profileId={profileid}></Followers>

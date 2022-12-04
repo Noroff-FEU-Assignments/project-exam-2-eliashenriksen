@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { BASE_URL } from "../../../../constants/api";
 import useAxios from "../../../../hooks/useAxios";
 import styles from "../../../../styles/PostBlockCreateComment.module.css";
 
@@ -29,11 +28,9 @@ export default function PostBlockCreateComment({ replyToCommentOwner, setReplyTo
   async function onSubmit(data) {
 		setSubmitting(true);
 		setCommentError(null);
-		console.log("create comment data >>", data); //delete
 
 		try {
 			const response = await api.post(`/api/v1/social/posts/${postId}/comment`, data);
-			console.log("AXIOS CREATE COMMENT RESPONSE:", response); //Delete console log later
 
       if (response.data.id) {
 				if (!commentsToggled) {
@@ -46,8 +43,8 @@ export default function PostBlockCreateComment({ replyToCommentOwner, setReplyTo
       }
 			
 		} catch (error) {
-			console.log("AXIOS CREATE COMMENT ERROR:", error); //Delete console log later
-			setCommentError("An error occured while posting your comment."); //Add custom error messages based on error code
+			console.log(error);
+			setCommentError("An error occured while posting your comment.");
 		} finally {
 			setSubmitting(false);
 		}
@@ -57,7 +54,6 @@ export default function PostBlockCreateComment({ replyToCommentOwner, setReplyTo
 		if (replyToCommentId) {
 			const commentOwner = replyToCommentOwner;
 			setReplyToCommentOwner(commentOwner);
-			console.log("useffeect called", replyToCommentId);
 			setValue('replyToId', parseInt(replyToCommentId));
 		}
 	},[replyToCommentId])

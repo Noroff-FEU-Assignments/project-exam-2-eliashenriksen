@@ -11,12 +11,10 @@ export default function PostBlockReactWithEmoji({ postId, reactionUpdateTracker,
   const api = useAxios();
 
   async function sendEmoji(event) {
-    console.log(event.native); //delete console log
 
     if (event.native) {
       try {
         const response = await api.put(`/api/v1/social/posts/${postId}/react/${event.native}`);
-        console.log("AXIOS REACT WITH EMOJI RESPONSE:", response); //Delete console log later
         updateReactions(reactionUpdateTracker + 1);
 
       } catch (error) {

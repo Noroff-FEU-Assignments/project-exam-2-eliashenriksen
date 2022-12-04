@@ -18,9 +18,7 @@ export default function PostBlockComments({ profileId, replyToCommentOwner, setR
     async function getComments() {
       try {
         const firstCall = await api.get(`/api/v1/social/posts/${postId}?_author=true&_comments=true`);
-        console.log("api comment data >", firstCall.data);
         setComments(firstCall.data.comments);
-        console.log(comments);
 
       } catch (error) {
         console.log(error);
@@ -63,7 +61,6 @@ export default function PostBlockComments({ profileId, replyToCommentOwner, setR
   }
 
   function replyToCommentHandler(event) {
-    console.log("Reply clicked"); // delete
     setReplyToCommentId(parseInt(event.target.id));
     setReplyToCommentOwner(event.target.dataset.owner);
     let currentRoute = router.pathname;
@@ -80,7 +77,6 @@ export default function PostBlockComments({ profileId, replyToCommentOwner, setR
       {comments.map((comment) => {
         const mainCommentReplyToId = comment.replyToId;
         const replyingTo = comments.filter(comment => comment.id === mainCommentReplyToId);
-        console.log("replyingto data>", replyingTo);
         return(
             <React.Fragment key={comment.id}>
               <div key={comment.id} className={styles.commentBlock}>
