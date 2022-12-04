@@ -110,3 +110,7 @@
   align-items: center !important;
   max-width: 25rem;
 }
+
+.formH1 {
+  margin-bottom: 1rem;
+}

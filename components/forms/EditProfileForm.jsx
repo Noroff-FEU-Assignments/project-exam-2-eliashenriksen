@@ -5,8 +5,6 @@ import { useState } from "react";
 import useAxios from "../../hooks/useAxios";
 import styles from "../../styles/EditPostForm.module.css";
 import { useRouter } from "next/router";
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 
 export default function EditProfileForm({ name, email, avatar, banner }) {
 
@@ -62,32 +60,36 @@ export default function EditProfileForm({ name, email, avatar, banner }) {
 	}
 
   return(
-    <form className={styles.editPostForm} onSubmit={handleSubmit(onSubmit)}>
-      {postSuccess && <span>{postSuccess}</span>}
-      {postError && <span>{postError}</span>}
-      <fieldset disabled={submitting}>
+    <>
+      <h1 className={styles.formH1}>{name}</h1>
+      <p>{email}</p>
+      <form className={styles.editPostForm} onSubmit={handleSubmit(onSubmit)}>
+        {postSuccess && <span>{postSuccess}</span>}
+        {postError && <span>{postError}</span>}
+        <fieldset disabled={submitting}>
 
-        <div className={styles.formInputWrapper}>
-          <div className={styles.formInputSpanWrapper}>
-            {errors.banner && <span>{errors.banner.message}</span>}
+          <div className={styles.formInputWrapper}>
+            <div className={styles.formInputSpanWrapper}>
+              {errors.banner && <span>{errors.banner.message}</span>}
+            </div>
+            <label>Banner Image URL</label>
+            <input name="banner" placeholder="Banner Image URL (optional)" defaultValue={banner} {...register("banner")} />
           </div>
-          <label>Banner Image URL</label>
-          <input name="banner" placeholder="Banner Image URL (optional)" defaultValue={banner} {...register("banner")} />
-        </div>
 
-        <div className={styles.formInputWrapper}>
-          <div className={styles.formInputSpanWrapper}>
-            {errors.avatar && <span>{errors.avatar.message}</span>}
+          <div className={styles.formInputWrapper}>
+            <div className={styles.formInputSpanWrapper}>
+              {errors.avatar && <span>{errors.avatar.message}</span>}
+            </div>
+            <label>Avatar Image URL</label>
+            <input name="avatar" placeholder="Avatar Image URL (optional)" defaultValue={avatar} {...register("avatar")} />
           </div>
-          <label>Avatar Image URL</label>
-          <input name="avatar" placeholder="Avatar Image URL (optional)" defaultValue={avatar} {...register("avatar")} />
-        </div>
 
-        <div className={styles.formButtonWrapper1}>
-          <button className="globalButtonStyling buttonPrimary"><i className="far fa-save"></i> Save Changes</button>
-          <button className="globalButtonStyling buttonSecondary" type="button" onClick={cancelEdit}>Cancel</button>
-        </div>
-      </fieldset>
-    </form>
+          <div className={styles.formButtonWrapper1}>
+            <button className="globalButtonStyling buttonPrimary"><i className="far fa-save"></i> Save Changes</button>
+            <button className="globalButtonStyling buttonSecondary" type="button" onClick={cancelEdit}>Cancel</button>
+          </div>
+        </fieldset>
+      </form>
+    </>
   )
 }

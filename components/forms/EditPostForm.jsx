@@ -87,6 +87,7 @@ export default function EditPostForm({ postId, prefillTitle, prefillBody, prefil
 
   return(
     <>
+			<h1 className={styles.formH1}>Manage Post</h1>
 			<Modal className={styles.modalWhole} show={show} onHide={handleClose} contentClassName={styles.modalContent}>
         <Modal.Header>
           <Modal.Title>

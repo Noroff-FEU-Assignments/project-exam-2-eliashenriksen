@@ -55,8 +55,7 @@ export default function EditProfile() {
   }
 
   return(
-    <Layout title={user}>
-      <p>{profile.email}</p>
+    <Layout>
       <EditProfileForm name={profile.name} email={profile.email} avatar={profile.avatar} banner={profile.banner}></EditProfileForm>
     </Layout>
   )
