@@ -1,16 +1,14 @@
 # Elias Henriksen Noroff Project Exam 2
 
-## Setup & Run Project Locally
+![image](https://eliashenriksen.no/images/projects/projectexam2/projectexam2.png)
 
-There are no special requirements to run the project locally. This is a NextJS project made with create next app.
+The purpose of this project was to take the skills learned over the last two years and take on an extensive project where the finished product should reflect the candidate's general development capabilities, in addition to visual and technical skills.
 
-1. Install the required packades - `npm install`
-2. Run the local dev server - `npm run dev`
-3. Open the local application in your browser - [http://localhost:3000](http://localhost:3000)
+## Description
 
-## My Project Description
+An existing Social Media company (not actually real) has approached us to create a brand new front end for their application. While they have a list of required features, the design and user experience has not been specified. Working with the official API documentation, we were to plan, design and build a modern front end social media application.
 
-The original full project brief is included at the bottom of this readme.
+A full list of requirements that were given for this project can be found at the bottom of this readme where the full original brief is shown.
 
 ### Description Of Solution
 
@@ -50,6 +48,63 @@ Even though i really like how the design turned out, if i had more time and had 
 For the most fun part. I think the first thing that has to be said is that i learned A LOT over the course of this project in regards to react/nextjs. I went into it with a decent understanding of NextJS but there were for sure things in the required user stories that i was not fully sure how i was going to implement on day 1. Compared to my earlier big projects throughout the studies, it was actually a lot smoother sailing. There were a few problems that were very annoying but they all got solved at the end, and today, compared to day 1 of the project i think i have tremendously more understanding of react and nextjs than i did back then. Core principles like state, hydration, how the pages are rendered etc. I think i learned so much mostly because i had my mind set on implementing functionality exactly as envisioned, with no compromises, so when i ended up with a hurdle i just banged my head into it researching the topic untill it was solved the way i wanted it. And, thankfully most of the stuff that i had to learn to solve my problems seems like i managed to understand fairly quickly.
 
 I would like to say i am satisfied by the coding part of this project and as far as i understand i believe i have done a good job. There are a few things though that i can definitely probably point out that could be improved upon. The biggest few are probably, creating more generic and re-useable components. Creating MORE components in general, as some of the components i made ended up being fairly complex which is probably what you want to avoid, which is also the third one, splitting my components up more into smaller components.
+
+## Built With
+
+You can list a the tech stack that you've used over here
+
+- [React.js](https://reactjs.org/)
+- [Bootstrap](https://getbootstrap.com)
+
+## Getting Started
+
+### Installing
+
+1. Clone the repo:
+
+```bash
+git clone git@github.com:Noroff-FEU-Assignments/project-exam-2-eliashenriksen.git
+```
+
+2. Install the dependencies:
+
+```
+npm install
+```
+
+### Running
+
+There are no special requirements to run the project locally. This is a NextJS project made with create next app.
+
+1. To run the app, run the local dev server:
+
+```bash
+npm run dev
+```
+
+2. Open the local application in your browser (default port 3000):
+
+[http://localhost:3000](http://localhost:3000)
+
+## Contributing
+
+Here you can detail any information you want to provide regarding contributing to the project. For big projects you will usually have a separate `CONTRIBUTING.md` and link to it, but for smaller projects you can simply include instructions here. These instructions can simply detail the process you want a person to take, such as to make sure to open a pull request so code can be reviewed.
+
+## Contact
+
+This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
+
+[My Twitter page](www.twitter.com)
+
+[My LinkedIn page](www.linkedin.com)
+
+## License
+
+You can link to your license file here if you're using one, or mention what license the codebase falls under. If you're unsure then you can simply delete this section.
+
+## Acknowledgments
+
+This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.
 
 # Project Brief Below
 
