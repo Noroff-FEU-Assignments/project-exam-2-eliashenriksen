@@ -142,6 +142,10 @@
   padding-bottom: 2rem;
 }
 
+.postBlockMiddle p {
+  word-break: break-all;
+}
+
 .postBlockMiddleImageWrapper {
   align-self: center;
   position: relative !important;
