@@ -50,7 +50,7 @@ export default function AllPosts({ postUpdateTracker, apiRoute }) {
     )
   }
 
-  if (apiRoute.includes("following") || posts.length === 0) {
+  if (apiRoute.includes("following") && posts.length === 0) {
     return(
         <div>
           <p>Follow somebody to start seeing their posts on your feed!</p>
